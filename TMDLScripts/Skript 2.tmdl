@@ -12,7 +12,7 @@ createOrReplace
 			annotation SummarizationSetBy = Automatic
 
 		column HUB_SALES_DOCUMENT_LINEITEM_HKEY
-			dataType: string
+			dataType: text
 			lineageTag: 664765f4-4a91-422a-8d37-a4b205d02d61
 			summarizeBy: none
 			sourceColumn: HUB_SALES_DOCUMENT_LINEITEM_HKEY
@@ -20,7 +20,7 @@ createOrReplace
 			annotation SummarizationSetBy = Automatic
 
 		column HUB_ACCOUNT_HKEY
-			dataType: string
+			dataType: date
 			lineageTag: b001bbe7-677d-4603-8a3f-964cfe7e7990
 			summarizeBy: none
 			sourceColumn: HUB_ACCOUNT_HKEY
@@ -28,7 +28,7 @@ createOrReplace
 			annotation SummarizationSetBy = Automatic
 
 		column HUB_PRODUCT_HKEY
-			dataType: string
+			dataType: datetime
 			lineageTag: 9b03d993-3ebe-4772-ac09-c49e2ab653b0
 			summarizeBy: none
 			sourceColumn: HUB_PRODUCT_HKEY
@@ -36,7 +36,7 @@ createOrReplace
 			annotation SummarizationSetBy = Automatic
 
 		column HUB_LOCATION_HKEY
-			dataType: string
+			dataType: dateTime
 			lineageTag: ef0a853b-10c6-4532-a85b-07baa25fe375
 			summarizeBy: none
 			sourceColumn: HUB_LOCATION_HKEY
