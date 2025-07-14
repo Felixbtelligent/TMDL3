@@ -1,0 +1,182 @@
+table VMI-FC
+	lineageTag: e1e09482-8922-4d84-8d15-45882a0d668e
+
+	column 'Month Year'
+		dataType: string
+		lineageTag: 908e3784-1a6f-465b-bc19-d3d1fc0e77fb
+		summarizeBy: none
+		sourceColumn: Month Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column LegalEntity
+		dataType: string
+		lineageTag: a99b1694-a678-4a26-b7c9-77dcbc764de8
+		summarizeBy: none
+		sourceColumn: LegalEntity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoices (EUR)'
+		dataType: double
+		lineageTag: d15952b5-e212-497b-9bd8-4e6099ccd26b
+		summarizeBy: sum
+		sourceColumn: Invoices (EUR)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Advance Invoices P11 (EUR)'
+		dataType: int64
+		formatString: 0
+		lineageTag: d700f2be-0d14-4e0a-8f91-07d444da34c3
+		summarizeBy: sum
+		sourceColumn: Advance Invoices P11 (EUR)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deliveries (EUR)'
+		dataType: double
+		lineageTag: 59f30bef-40be-4f60-8bd3-08aa3154c400
+		summarizeBy: sum
+		sourceColumn: Deliveries (EUR)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Confirmed Orders (EUR)'
+		dataType: double
+		lineageTag: 4170d65e-8d70-4d6e-a2c6-79913867bf7f
+		summarizeBy: sum
+		sourceColumn: Confirmed Orders (EUR)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Unconfirmed Orders (EUR)'
+		dataType: double
+		lineageTag: 1578b5b9-e93c-4922-97bb-03755fb0ed93
+		summarizeBy: sum
+		sourceColumn: Unconfirmed Orders (EUR)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'VMI-FC (EUR)'
+		dataType: double
+		lineageTag: b00d40c1-d976-4d7d-9de4-0aab95db66d8
+		summarizeBy: sum
+		sourceColumn: VMI-FC (EUR)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total (EUR)'
+		dataType: double
+		lineageTag: ac8c0987-8a7e-4df8-8c95-d68cd4e6a044
+		summarizeBy: sum
+		sourceColumn: Total (EUR)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget (EUR)'
+		dataType: double
+		lineageTag: e502b45b-fa3f-4c77-8b43-76a6c5b89d2d
+		summarizeBy: sum
+		sourceColumn: Budget (EUR)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column11
+		dataType: string
+		lineageTag: abb58b9e-8072-447b-9f0b-af5a64fbee3a
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link to SD01'
+		dataType: string
+		lineageTag: 3f143a29-3af3-4e01-a7eb-dc43a8f1a652
+		summarizeBy: none
+		sourceColumn: Link to SD01
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: faeb0943-cae2-4295-ad0d-316ee6240620
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: a7e8d11a-6ed9-41da-9369-e5eb0601c32d
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: string
+		lineageTag: 47520942-ca5d-48e1-81b5-257047699d93
+		summarizeBy: none
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Datum
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a4f7a3b8-dd54-41dc-ae6a-7593a1215bfc
+		summarizeBy: none
+		sourceColumn: Datum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition VMI-FC = m
+		mode: import
+		source =
+				let
+				    Quelle = SharePoint.Files("https://aenovagroup.sharepoint.com/sites/entities/corp/it/QlikView/", [ApiVersion = 15]),
+				    #"Gefilterte Zeilen" = Table.SelectRows(Quelle, each ([Extension] = ".xlsx") and ([Name] = "VMI-FC list 2025.xlsx")),
+				    #"VMI-FC list 2025 xlsx_https://aenovagroup sharepoint com/sites/entities/corp/it/QlikView/QlikView_Lists/" = #"Gefilterte Zeilen"{[Name="VMI-FC list 2025.xlsx",#"Folder Path"="https://aenovagroup.sharepoint.com/sites/entities/corp/it/QlikView/QlikView_Lists/"]}[Content],
+				    #"Importierte Excel-Arbeitsmappe" = Excel.Workbook(#"VMI-FC list 2025 xlsx_https://aenovagroup sharepoint com/sites/entities/corp/it/QlikView/QlikView_Lists/"),
+				    Sheet1_Sheet = #"Importierte Excel-Arbeitsmappe"{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Höher gestufte Header" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Höher gestufte Header",{{"Year Month", type text}, {"LegalEntity", type text}, {"Invoices (EUR)", type number}, {"Advance Invoices P11 (EUR)", Int64.Type}, {"Deliveries (EUR)", type number}, {"Confirmed Orders (EUR)", type number}, {"Unconfirmed Orders (EUR)", type number}, {"VMI-FC (EUR)", type number}, {"Total (EUR)", type number}, {"Budget (EUR)", type number}, {"Column11", type any}, {"Link to SD01", type text}}),
+				    #"Spalte nach Trennzeichen teilen" = Table.SplitColumn(#"Geänderter Typ", "Year Month", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Year Month.1", "Year Month.2"}),
+				    #"Geänderter Typ1" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen",{{"Year Month.1", type text}, {"Year Month.2", Int64.Type}}),
+				    #"Ersetzter Wert" = Table.ReplaceValue(#"Geänderter Typ1","May","Mai",Replacer.ReplaceText,{"Year Month.1"}),
+				    #"Ersetzter Wert1" = Table.ReplaceValue(#"Ersetzter Wert","Mar","Mrz",Replacer.ReplaceText,{"Year Month.1"}),
+				    #"Ersetzter Wert2" = Table.ReplaceValue(#"Ersetzter Wert1","Oct","Okt",Replacer.ReplaceText,{"Year Month.1"}),
+				    #"Zusammengeführte Spalten" = Table.CombineColumns(Table.TransformColumnTypes(#"Ersetzter Wert2", {{"Year Month.2", type text}}, "de-DE"),{"Year Month.1", "Year Month.2"},Combiner.CombineTextByDelimiter(" ", QuoteStyle.None),"Month Year"),
+				    #"Hinzugefügte benutzerdefinierte Spalte" = Table.AddColumn(#"Zusammengeführte Spalten", "Month", each [Month Year]),
+				    #"Spalte nach Trennzeichen teilen1" = Table.SplitColumn(#"Hinzugefügte benutzerdefinierte Spalte", "Month", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Month.1", "Month.2"}),
+				    #"Geänderter Typ2" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen1",{{"Month.1", type text}, {"Month.2", Int64.Type}}),
+				    #"Umbenannte Spalten" = Table.RenameColumns(#"Geänderter Typ2",{{"Month.2", "Year"}, {"Month.1", "Month"}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte1" = Table.AddColumn(#"Umbenannte Spalten", "Month Number", each if [Month] = "Jan" then 1 else if [Month]="Feb" then 2 else if [Month]="Mrz" then 3 else if [Month]= "Apr" then 4 else if [Month]="Mai" then 5 else if [Month]="Jun" then 6 else if [Month] = "Jul" then 7 else if [Month]="Aug" then 8 else if [Month]="Sep" then 9 else if [Month]= "Okt" then 10 else if [Month]="Nov" then 11 else if [Month]="Dez" then 12 else "Error"),
+				    #"Hinzugefügte benutzerdefinierte Spalte2" = Table.AddColumn(#"Hinzugefügte benutzerdefinierte Spalte1", "Datum", each if [Month Year]= "Mrz 2025" then "01.03.2025" else if [Month Year]= "Apr 2025" then "01.04.2025" else if [Month Year]= "Mai 2025" then "01.05.2025" else if [Month Year]= "Jun 2025" then "01.06.2025" else if [Month Year]= "Jul 2025" then "01.07.2025" else if [Month Year]= "Aug 2025" then "01.08.2025" else if [Month Year]= "Sep 2025" then "01.09.2025" else if [Month Year]= "Okt 2025" then "01.11.2025" else if [Month Year]= "Dez 2025" then "01.12.2026" else if [Month Year]= "Jan 2026" then
+				"01.01.2026" else if [Month Year]= "Feb 2026" then  "01.02.2026" else if [Month Year]= "Mrz 2026" then "01.03.2026" else if [Month Year]= "Apr 2026" then "01.04.2026" else if [Month Year]= "Mai 2026" then "01.05.2026" else if [Month Year]= "Jun 2026" then "01.06.2026" else [Month Year]),
+				    #"Geänderter Typ3" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte2",{{"Datum", type date}})
+				in
+				    #"Geänderter Typ3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

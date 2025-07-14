@@ -1,0 +1,137 @@
+table Datumstabelle
+	lineageTag: 62e1cb4f-96fe-4ef9-b80a-cb651008a486
+
+	column Date
+		formatString: General Date
+		lineageTag: 087573bf-2f96-4c2f-b50e-af772276704d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 41c4ddf0-079f-4f21-9334-a4518cc6d8e6
+			defaultHierarchy: LocalDateTable_9e3d4edb-2002-405d-af22-03dcd11cefc9.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+	column Jahr
+		formatString: 0
+		lineageTag: e49f663e-d5be-491e-91b1-f0c61b81fec0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Jahr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monat
+		lineageTag: 227c8641-86bf-4fba-b367-be9de5b61a80
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Monat]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monat Nummer'
+		formatString: 0
+		lineageTag: e1eecc35-da98-412c-b10d-70f6c971e211
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Monat Nummer]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quartal
+		lineageTag: 81462af1-ed6e-4d68-a446-f4a4c5a036e6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quartal]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monat Jahr'
+		lineageTag: c70f087e-9ecf-4564-b14c-14666ce2b90b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Monat Jahr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Wochentag
+		lineageTag: f852cf44-a6cf-4fba-846a-2e39e0ccc7c0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Wochentag]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Wochentag Nummer'
+		formatString: 0
+		lineageTag: 2ebe9358-e3a1-42ad-9536-a9c9a129c0bb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Wochentag Nummer]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ISO Jahr'
+		formatString: 0
+		lineageTag: 43de49b7-71e4-47de-bbcb-f1d722404689
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [ISO Jahr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column JahrMonat = Datumstabelle[Jahr]&Datumstabelle[Monat Nummer]
+		lineageTag: b0ca4446-aa26-4810-9668-84ef3d8b034b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPastMonthFlag = ```
+			
+			IF (
+			    YEAR(Datumstabelle[Date]) < YEAR(TODAY()) || 
+			    (YEAR(Datumstabelle[Date]) = YEAR(TODAY()) && MONTH(Datumstabelle[Date]) < MONTH(TODAY())), 
+			    1, 
+			    0
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 3a5c54f3-3c8e-4dce-a1ae-7c39119df69b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonatKurz = ```
+			FORMAT([Date], "mmm")
+			
+			```
+		lineageTag: 0ae88865-ca3d-4660-bb72-5a6162c56f3f
+		summarizeBy: none
+		sortByColumn: 'Monat Nummer'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Datumstabelle = calculated
+		mode: import
+		source = ```
+				
+				ADDCOLUMNS (
+				    CALENDAR (DATE(2020, 1, 1), DATE(2030, 12, 31)),
+				    "Jahr", YEAR([Date]),
+				    "Monat", FORMAT([Date], "MMMM"),
+				    "Monat Nummer", MONTH([Date]),
+				    "Quartal", "Q" & FORMAT([Date], "Q"),
+				    "Monat Jahr", FORMAT([Date], "MMM YYYY"),
+				    "Wochentag", FORMAT([Date], "dddd"),
+				    "Wochentag Nummer", WEEKDAY([Date], 2),
+				    "ISO Jahr", YEAR([Date] - WEEKDAY([Date], 2) + 4)
+				)
+				
+				```
+
+	annotation PBI_Id = 5655c98de3d44761a5d77f0cb894a03e
+

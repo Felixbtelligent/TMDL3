@@ -1,0 +1,51 @@
+table 'Parameter Clean Up'
+	lineageTag: 4b082d37-de6e-458d-8e0d-b7906a707960
+
+	column 'Parameter Clean Up'
+		lineageTag: 361bdf9a-0d63-4b67-a009-559a7b3c76ad
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Clean Up Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Clean Up Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Clean Up Felder'
+		isHidden
+		lineageTag: 9a6bf0b9-786a-445d-9972-19876943194b
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Clean Up Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Clean Up Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: f5fa27be-dcc3-4692-85b3-ade125d4d9ab
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter Clean Up' = calculated
+		mode: import
+		source =
+				{
+				    ("Jahr", NAMEOF('Datumstabelle'[Date].[Jahr]), 0),
+				    ("Monat", NAMEOF('Datumstabelle'[Date].[Monat]), 1),
+				    ("DEBITOR_GROUP_NAME", NAMEOF('DIM_DEBITOR_GEN'[DEBITOR_GROUP_NAME]), 2),
+				    ("SALES_DOCUMENT_NR", NAMEOF('FACT_SALES_OPEN_ORDERS'[SALES_DOCUMENT_NR]), 3),
+				    ("SITECODE", NAMEOF('FACT_SALES_OPEN_ORDERS'[SITECODE]), 4)
+				}
+
+	annotation PBI_Id = 1768fa880baf45faa46d7e090cff9760
+

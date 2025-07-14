@@ -1,0 +1,57 @@
+table Period
+	lineageTag: 101c17de-4aa6-41f7-b856-572319865f9f
+
+	column Period
+		lineageTag: e710722a-340f-4b33-9b68-c3fddd9627e5
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Period Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Period Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Felder'
+		isHidden
+		lineageTag: 6fc30543-99de-4d4b-bbbb-2c6a9e5580fc
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Period Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: c0436f0d-6deb-40d8-9ad5-4e2da79193f7
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Period = calculated
+		mode: import
+		source =
+				{
+				    (" ", NAMEOF('_Measures'[Blank]), -1),
+				    ("Net Value Invoices 2022", NAMEOF('_Measures'[Net Value Invoices 2022]), 0),
+				    ("Net Value Invoices 2023", NAMEOF('_Measures'[Net Value Invoices 2023]), 1),
+				    ("Net Value Invoices 2024", NAMEOF('_Measures'[Net Value Invoices 2024]), 2),
+				    ("Net Value Invoices 2025", NAMEOF('_Measures'[Net Value Invoices 2025]), 3),
+				    ("Net Value Invoices 2026", NAMEOF('_Measures'[Net Value Invoices 2026]), 4),
+				    ("Quantity Invoices 2022", NAMEOF('_Measures'[Quantity Invoices 2022]), 5),
+				    ("Quantity Invoices 2023", NAMEOF('_Measures'[Quantity Invoices 2023]), 6),
+				    ("Quantity Invoices 2024", NAMEOF('_Measures'[Quantity Invoices 2024]), 7),
+				    ("Quantity Invoices 2025", NAMEOF('_Measures'[Quantity Invoices 2025]), 8),
+				    ("Quantity Invoices 2026", NAMEOF('_Measures'[Quantity Invoices 2026]), 9)
+				}
+
+	annotation PBI_Id = 9b9aaeff348f4cffb10e5262c7280a0d
+

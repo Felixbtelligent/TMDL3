@@ -1,0 +1,21 @@
+createOrReplace
+
+	ref table _Measures
+
+		measure 'Actual Budget comparison % YTD' = ```
+				
+				var up_arrow = "+"
+				var down_arrow = "-"
+				var thisyear = [Net Value]
+				var LY = [Budget YTD (bis Heute)]
+				var difpercentage = DIVIDE(thisyear,LY)-1
+				
+				Return
+				IF(
+				    difpercentage < 0, 
+				      FORMAT(difpercentage, "0%") ,
+				    up_arrow & FORMAT(difpercentage, "0%")
+				)
+				```
+			lineageTag: d7258316-7d01-4813-9fcf-0e118e35e7eb
+

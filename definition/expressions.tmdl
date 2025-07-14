@@ -1,0 +1,44 @@
+expression SF_SERVER = "ew21809.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 5298bd09-acb6-483d-b667-a2e807a5ac4c
+	queryGroup: Tech
+
+	annotation PBI_ResultType = Text
+
+/// PBI_COMPUTE_WH_L_DEV
+/// PBI_COMPUTE_WH_L_TEST
+/// PBI_COMPUTE_WH_L_PROD
+expression SF_WAREHOUSE = "DAILY_LOAD_MM01_WH_L" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: b01cb2b6-b958-4829-b3c8-c4ffea096426
+	queryGroup: Tech
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
+/// DWH_DEV
+/// DWH_TEST
+/// DWH_PROD
+expression SF_DATABASE = "SF_DWH_DATAVAULT" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: bae68c49-7d37-4175-9251-13a7b96d30d8
+	queryGroup: Tech
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression SF_SCHEMA = "DWH_MART_SALES" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: beaac806-f055-422e-aa08-7dd890b5c516
+	queryGroup: Tech
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+/// DEV: PBI_
+/// TEST and PROD: leave empty
+expression SF_ViewPrefix = null meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=false]
+	lineageTag: 9d76f70d-24e4-493f-9dff-f8906da65a2b
+	queryGroup: Tech
+
+	annotation PBI_ResultType = Null
+

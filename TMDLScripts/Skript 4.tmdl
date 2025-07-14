@@ -1,0 +1,13 @@
+createOrReplace
+
+	ref table _Measures
+
+		measure 'BUD vs ACT in %' = ```
+				DIVIDE(
+				    SUM(FACT_SALES_PERFORMANCE[INVOICE_NET_VALUE_GC]),
+				    SUM(PBI_V_BUDGET[REVENUE_EUR]),
+				    BLANK()
+				)
+				```
+			formatString: 0.00\ %;-0.00\ %;0.00\ %
+			lineageTag: 390cf592-0b82-4370-9b6b-c0fbe5ab825f

@@ -1,0 +1,49 @@
+table Parameter
+	lineageTag: 923ea7c2-79f4-45cf-bb98-b57d95aa4e5d
+
+	column Parameter
+		lineageTag: f6a3a17f-3a24-4c3b-9ea8-9f418e1f3288
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Felder'
+		isHidden
+		lineageTag: 324f4739-0963-407a-89d3-61e2536e899b
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: d6518965-7839-4ec8-ba6f-fd05746cd550
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("Customer Group", NAMEOF('DIM_DEBITOR_GEN'[DEBITOR_GROUP_NAME]), 0),
+				    ("Aenova Sales Unit", NAMEOF('DIM_DEBITOR_GEN'[SALES_UNIT]), 1),
+				    ("Dosage Form", NAMEOF('DIM_PRODUCT_GEN'[CRM_DOSAGE_FORM]), 2)
+				}
+
+	annotation PBI_Id = 535976e22e3e482ab476ec2c2003a3e9
+

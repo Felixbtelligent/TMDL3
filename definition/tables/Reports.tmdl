@@ -1,0 +1,51 @@
+table Reports
+	lineageTag: 69302ab0-73c3-4107-9fc1-d6a9adef2b52
+
+	column Reports
+		lineageTag: e0bfe11b-b5f5-429c-9bc7-ed0161ee9d64
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Reports Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Reports Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reports Felder'
+		isHidden
+		lineageTag: 4e3fff07-18a5-4e07-a4f3-29eb00e07105
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Reports Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reports Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: ba0f27af-e2d4-48fb-8fd5-363666263279
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Reports = calculated
+		mode: import
+		source = ```
+				{
+				    (" ", NAMEOF(FACT_SALES_PERFORMANCE[Blank]), -1),
+				    ("Delivery Net Value", NAMEOF('_Measures'[Delivery Net Value]), 0),
+				    ("Delivery Quantity", NAMEOF('_Measures'[Delivery Quantity]), 1)
+				}
+				
+				```
+
+	annotation PBI_Id = f2fd4fe81c104348becbff6cdab1e62b
+

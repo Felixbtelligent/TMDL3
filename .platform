@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "SalesCockpit_V1_TestVisuals_QA_Aktualisierung_TMDLVersuch_new2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0658798b-48f4-418b-834f-3e1eb4bc5a31"
+  }
+}

@@ -1,0 +1,29 @@
+createOrReplace
+
+	ref table _Measures
+
+		measure 'Actual Budget comparison %' = ```
+
+
+
+
+
+
+
+										var up_arrow = "+"
+
+
+
+								var down_arrow = "-"
+											var thisyear = [Net Value]
+								var LY = [Budget revenues]
+								var difpercentage = DIVIDE(thisyear,LY)-1
+
+								Return
+								IF(
+								    difpercentage < 0,
+								      FORMAT(difpercentage, "0%") ,
+								    up_arrow & FORMAT(difpercentage, "0%")
+								)`
+				```
+			lineageTag: b7c300df-401c-49bb-998d-0ee1da3e6683

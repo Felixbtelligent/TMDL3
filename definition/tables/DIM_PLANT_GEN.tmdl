@@ -1,0 +1,106 @@
+table DIM_PLANT_GEN
+	lineageTag: 41b95d48-b437-4bda-a47a-460e9ab59d8e
+
+	column DIM_PLANT
+		dataType: string
+		lineageTag: d211a266-4b64-461f-9fd2-b3d64e42ee6a
+		summarizeBy: none
+		sourceColumn: DIM_PLANT
+
+		annotation SummarizationSetBy = Automatic
+
+	column SITECODE
+		dataType: string
+		lineageTag: ea64c575-ccaf-432b-a235-69bb0acb6ebc
+		summarizeBy: none
+		sourceColumn: SITECODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANT
+		dataType: string
+		lineageTag: 4032a765-5911-4d8f-ab28-7df8f8164eb4
+		summarizeBy: none
+		sourceColumn: PLANT
+
+		annotation SummarizationSetBy = Automatic
+
+	column RSRC
+		dataType: string
+		lineageTag: 8160def4-5365-4e23-96d9-550812aabae2
+		summarizeBy: none
+		sourceColumn: RSRC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location Code'
+		dataType: string
+		lineageTag: 8e7458d8-3643-4900-80f1-f208d976c48d
+		summarizeBy: none
+		sourceColumn: Location Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plant Code BOM'
+		dataType: string
+		lineageTag: bf683d56-458f-4949-a64b-78a235c1f2da
+		summarizeBy: none
+		sourceColumn: Plant Code BOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Client Code'
+		dataType: string
+		lineageTag: b925ef41-69ec-4fcd-9668-6bde6e0cd0ba
+		summarizeBy: none
+		sourceColumn: Client Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'IT System'
+		dataType: string
+		lineageTag: 4a2d0df6-e5ba-48ce-afd7-983bdf72e87c
+		summarizeBy: none
+		sourceColumn: IT System
+
+		annotation SummarizationSetBy = Automatic
+
+	column LE
+		dataType: string
+		lineageTag: 249687e7-313e-4291-aee1-bc7ecff3507c
+		summarizeBy: none
+		sourceColumn: LE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOKING_CODE
+		dataType: string
+		lineageTag: 0a85ec43-714b-45c5-8de7-c7d0148b8169
+		summarizeBy: none
+		sourceColumn: BOOKING_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVOICING_ENTITY
+		dataType: string
+		lineageTag: 84396e8f-1fb1-41ad-9a0b-8961d528c3fa
+		summarizeBy: none
+		sourceColumn: INVOICING_ENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_PLANT_GEN = m
+		mode: import
+		source =
+				let
+				    Quelle = Snowflake.Databases(SF_SERVER,SF_WAREHOUSE),
+				    SF_DWH_DATAVAULT_Database = Quelle{[Name="SF_DWH_DATAVAULT",Kind="Database"]}[Data],
+				    DWH_MART_SALES_Schema = SF_DWH_DATAVAULT_Database{[Name="DWH_MART_SALES",Kind="Schema"]}[Data],
+				    DIM_PLANT_SALES_View = DWH_MART_SALES_Schema{[Name="DIM_PLANT_SALES",Kind="View"]}[Data]
+				in
+				    DIM_PLANT_SALES_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

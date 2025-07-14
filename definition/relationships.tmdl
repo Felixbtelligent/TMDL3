@@ -1,0 +1,186 @@
+relationship 3cae0750-69ef-45d8-a272-f77cb3e5a31f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_PRODUCT_GEN.CREATED_ON
+	toColumn: LocalDateTable_23d71ea1-9664-4e1c-a6cb-e7b1f73a570c.Date
+
+relationship AutoDetected_59d581a1-6e6a-4154-8c6b-bfb7cd0b886c
+	fromColumn: PBI_V_BUDGET.HUB_PRODUCT_HKEY
+	toColumn: DIM_PRODUCT_GEN.HUB_PRODUCT_HKEY
+
+relationship 7f4be4ee-2a94-4634-8c69-54655ef50c5e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_SALES_PERFORMANCE.REQUESTED_DELIVERY_DATE
+	toColumn: LocalDateTable_825a81e6-7906-4e8f-b7f1-62ed6628be31.Date
+
+relationship 5711cdff-052b-41a3-b469-ed360d30c96a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_SALES_PERFORMANCE.DOCUMENT_DATE
+	toColumn: LocalDateTable_095dd0e0-4691-4968-9af2-9fed1ba6e47b.Date
+
+relationship 8e5f4a80-bea0-4ae1-858f-8b203f2c2610
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_SALES_PERFORMANCE.CREATED_ON
+	toColumn: LocalDateTable_5d2c04e7-d93a-48ef-b54f-ca3899ce9ceb.Date
+
+relationship 0b7cb8a9-892f-474f-ac5f-c9f192c2cb90
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_SALES_PERFORMANCE.UPDATED_ON
+	toColumn: LocalDateTable_8fc22977-1935-4d6d-96c4-59611a634382.Date
+
+relationship c2bd6aa5-3025-4af8-a71c-cd723d23e195
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_SALES_PERFORMANCE.DELIVERY_DOCUMENT_DATE
+	toColumn: LocalDateTable_ed696ca5-623a-427d-bb45-baf8d653d6b2.Date
+
+relationship a33a1ea6-66dc-4cce-bcbd-41291aba51af
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_SALES_PERFORMANCE.CONFIRMED_DELIVERY_DATE
+	toColumn: LocalDateTable_dfd14937-3143-4fba-95eb-ba226bcb244f.Date
+
+relationship 01c58ae9-0ac4-4aca-8572-5363ef0b9ce9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_SALES_PERFORMANCE.PLANNED_GOODS_ISSUE_DATE
+	toColumn: LocalDateTable_ac934392-62ba-4fc2-b446-648590801d2a.Date
+
+relationship 7f8ac949-efef-415c-ab21-4e06ccf8d0bd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_SALES_PERFORMANCE.ACTUAL_GOODS_ISSUE_DATE
+	toColumn: LocalDateTable_9280950a-1c8a-4b7c-b74f-ad1cca32ef8b.Date
+
+relationship AutoDetected_3805d4cf-f07c-4e88-98ef-ae9cd15d44a7
+	fromColumn: FACT_SALES_PERFORMANCE.HUB_PRODUCT_HKEY
+	toColumn: DIM_PRODUCT_GEN.HUB_PRODUCT_HKEY
+
+relationship 0a90e9ca-b0b3-0ba5-4118-c4c7ae45a5f9
+	fromColumn: FACT_SALES_PERFORMANCE.HUB_ACCOUNT_HKEY
+	toColumn: DIM_DEBITOR_GEN.HUB_DEBITOR_HKEY
+
+relationship 41c4ddf0-079f-4f21-9334-a4518cc6d8e6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Datumstabelle.Date
+	toColumn: LocalDateTable_9e3d4edb-2002-405d-af22-03dcd11cefc9.Date
+
+relationship f3f4e36e-a565-fc87-06d3-74f5e6899f4a
+	fromColumn: FACT_SALES_PERFORMANCE.BILLING_DOCUMENT_DATE
+	toColumn: Datumstabelle.Date
+
+relationship 35ecf669-1893-e85c-2ade-1e5d30007c0a
+	fromColumn: PBI_V_BUDGET.Datum
+	toColumn: Datumstabelle.Date
+
+relationship cf135bf2-0546-15ed-ad6f-4909286842f8
+	fromColumn: DIM_PLANT_GEN.LE
+	toColumn: 'Legal Entity Table'.LE
+
+relationship 43cc8d42-c2fb-1757-2e5c-deb13fd1cf54
+	fromColumn: PBI_V_BUDGET.SITECODE
+	toColumn: 'Site Code Tabelle'.SITECODE
+
+relationship 8acc3267-9d0a-0a7e-0d53-813a99263bc2
+	fromColumn: FACT_SALES_PERFORMANCE.LOCATION_CODE
+	toColumn: DIM_PLANT_GEN.'Plant Code BOM'
+
+relationship 646580ef-d2c4-c3be-4feb-fe10060f50c6
+	fromColumn: PBI_V_BUDGET.'Debitor Key'
+	toColumn: DIM_DEBITOR_GEN.'Debitor Key'
+
+relationship eba7aff0-c52c-9891-0e7f-9e63a07b4ec4
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: DIM_PLANT_GEN.SITECODE
+	toColumn: PBI_V_BUDGET.SITECODE
+
+relationship AutoDetected_8a9745d6-7db5-488e-a25e-2006fd5f73e7
+	fromColumn: ERP-FC.HUB_PRODUCT_HKEY
+	toColumn: DIM_PRODUCT_GEN.HUB_PRODUCT_HKEY
+
+relationship db656fe6-95b8-46a9-a83b-721d1cf75aae
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ERP-FC.DELIVERY_DATE
+	toColumn: LocalDateTable_24971b9d-8f5c-4747-8966-8d0c83bbddfa.Date
+
+relationship 5b483edb-285e-45c4-8550-bc1500456cf6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'FACT PRICING MONITOR'.VALID_FROM
+	toColumn: LocalDateTable_a2f7886f-54a4-43de-9d7a-f6ac3f69f4f2.Date
+
+relationship 13e9ac34-b024-4028-8a4f-04a15fb6da7c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'FACT PRICING MONITOR'.VALID_TO
+	toColumn: LocalDateTable_3083b539-5bcf-432c-8935-6035a12b970b.Date
+
+relationship AutoDetected_2948f3cd-edee-4f7a-b792-aeb9f1d7caa5
+	isActive: false
+	fromColumn: 'FACT PRICING MONITOR'.'Debitor Key'
+	toColumn: DIM_DEBITOR_GEN.'Debitor Key'
+
+relationship ecf65ca6-ed84-f44e-db61-5c0f5021b8b8
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: ERP-FC.HUB_PRODUCT_HKEY
+	toColumn: 'FACT PRICING MONITOR'.HUB_PRODUCT_HKEY
+
+relationship 9daab491-5565-4117-a394-1b49b2a9254c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_SALES_OPEN_ORDERS.ACTUALCONFIRMEDDELIVERYDATE
+	toColumn: LocalDateTable_8ebf0c0b-99be-4cbf-87d6-dcf61d1501c1.Date
+
+relationship 36dab4fa-b2f9-42ff-855d-f7b0f7e8e0e2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_SALES_OPEN_ORDERS.ACTUALCONFIRMEDGOODSISSUEDATE
+	toColumn: LocalDateTable_5f02c680-ab31-408b-9e23-82520a1b616c.Date
+
+relationship AutoDetected_958c31a0-a782-4ea7-aa00-589e015456a4
+	fromColumn: FACT_SALES_OPEN_ORDERS.HUB_PRODUCT_HKEY
+	toColumn: DIM_PRODUCT_GEN.HUB_PRODUCT_HKEY
+
+relationship fb56d040-5ef0-b0e7-f584-40dc1a114b00
+	fromColumn: VMI-FC.LegalEntity
+	toColumn: 'Legal Entity Table'.LE
+
+relationship 69944ac2-0ae3-d6b0-c144-ded528f5a3cc
+	fromColumn: VMI-FC.Datum
+	toColumn: Datumstabelle.Date
+
+relationship 2402744d-9142-03fd-3841-42e8e3f74e40
+	isActive: false
+	fromColumn: FACT_SALES_OPEN_ORDERS.SITECODE
+	toColumn: 'Site Code Tabelle'.SITECODE
+
+relationship 11100433-f73d-1daf-3118-2b57c9770668
+	fromColumn: FACT_SALES_OPEN_ORDERS.OPEN_ORDER_DATE
+	toColumn: Datumstabelle.Date
+
+relationship 03284982-1098-5ef0-cdf3-cf3ce54a37e6
+	isActive: false
+	fromColumn: FACT_SALES_OPEN_ORDERS.'Legal Entity'
+	toColumn: 'Legal Entity Table'.LE
+
+relationship 9d3111c0-57d3-58ee-48da-0561621b2cab
+	fromColumn: FACT_SALES_OPEN_ORDERS.HUB_ACCOUNT_HKEY
+	toColumn: DIM_DEBITOR_GEN.HUB_DEBITOR_HKEY
+
+relationship 1ead8fe1-fa34-2ba5-dd0c-00ec19d8f318
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: FACT_SALES_PERFORMANCE.HUB_PRODUCT_HKEY
+	toColumn: FACT_SALES_OPEN_ORDERS.HUB_PRODUCT_HKEY
+
+relationship 2584fe43-b912-e40e-0103-6425a5d69d31
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: DIM_PLANT_GEN.'Location Code'
+	toColumn: FACT_SALES_OPEN_ORDERS.LOCATION_CODE
+
+relationship 3df4a50c-1353-aa26-d0ac-1391b55afcee
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: DIM_PRODUCT_GEN.CRM_PRODUCT_ID
+	toColumn: Pruduct_Debitor_Mapping.CRM_PRODUCT_ID
+
+relationship 67c703f8-8896-96e7-cbc5-bd1331422249
+	fromColumn: Pruduct_Debitor_Mapping.CRM_DEBITOR_NR
+	toColumn: DIM_DEBITOR_GEN.HUB_DEBITOR_HKEY
+

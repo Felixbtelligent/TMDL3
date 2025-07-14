@@ -1,0 +1,385 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 675,
+        "y": 265
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 928,
+            "y": 1992.96875
+          },
+          "nodeIndex": "DIM_DEBITOR_GEN",
+          "nodeLineageTag": "d6044837-4106-499c-b085-1726b9c297bc",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 379,
+            "y": 1260.46875
+          },
+          "nodeIndex": "DIM_PRODUCT_GEN",
+          "nodeLineageTag": "b0fe8763-3b60-4f95-b1ed-1184d0eb90b3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 812.5,
+            "y": 1085.46875
+          },
+          "nodeIndex": "PBI_V_BUDGET",
+          "nodeLineageTag": "bb1acce1-bcc3-44b1-b446-1cd61e95862b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1177,
+            "y": 775.46875
+          },
+          "nodeIndex": "FACT_SALES_PERFORMANCE",
+          "nodeLineageTag": "6a6b6106-34ee-4896-b7a9-f6b2726f2ac6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1398.5,
+            "y": 1362.96875
+          },
+          "nodeIndex": "Datumstabelle",
+          "nodeLineageTag": "62e1cb4f-96fe-4ef9-b80a-cb651008a486",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 24
+        },
+        {
+          "location": {
+            "x": 21.5,
+            "y": 537.96875
+          },
+          "nodeIndex": "DIM_PLANT_GEN",
+          "nodeLineageTag": "41b95d48-b437-4bda-a47a-460e9ab59d8e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1972,
+            "y": 267.96875
+          },
+          "nodeIndex": "Totals",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1663,
+            "y": 265.46875
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "d7bb6eed-0d84-4e40-9f4a-da9651162138",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 2674,
+            "y": 291.96875
+          },
+          "nodeIndex": "Invoices Totals",
+          "nodeLineageTag": "24950b47-3996-4528-a87d-d5297da5a37a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 2347.5,
+            "y": 296.96875
+          },
+          "nodeIndex": "Details Invoices",
+          "nodeLineageTag": "952233c7-d21a-46da-a283-2af82681fb7f",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 25.5,
+            "y": 240.46875
+          },
+          "nodeIndex": "Legal Entity Table",
+          "nodeLineageTag": "809917e5-85f6-4d0a-9145-da51757fd77d",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 3142,
+            "y": 291.96875
+          },
+          "nodeIndex": "Reports",
+          "nodeLineageTag": "69302ab0-73c3-4107-9fc1-d6a9adef2b52",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 2685,
+            "y": 529.46875
+          },
+          "nodeIndex": "Details Open Orders",
+          "nodeLineageTag": "62298ff4-9560-430a-817b-aef9e1dcd442",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 54,
+            "y": 1635.46875
+          },
+          "nodeIndex": "Site Code Tabelle",
+          "nodeLineageTag": "445ce36c-702c-41fc-ada7-7ba7ee6e7547",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 23
+        },
+        {
+          "location": {
+            "x": 2185.5,
+            "y": 607.96875
+          },
+          "nodeIndex": "Debitor Table",
+          "nodeLineageTag": "e8b832e1-8adf-4934-b852-f8f93f753bca",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 189.5,
+            "y": 1915.46875
+          },
+          "nodeIndex": "ERP-FC",
+          "nodeLineageTag": "11e93b9c-648b-472c-999e-37292ceb39f6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 1793.5,
+            "y": 917.96875
+          },
+          "nodeIndex": "Pruduct_Debitor_Mapping",
+          "nodeLineageTag": "69cd7afb-3b38-4c43-925f-a4bccd5f097f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 2660,
+            "y": 771.96875
+          },
+          "nodeIndex": "Parameter",
+          "nodeLineageTag": "923ea7c2-79f4-45cf-bb98-b57d95aa4e5d",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 2656.5,
+            "y": 974.46875
+          },
+          "nodeIndex": "Parameter 2",
+          "nodeLineageTag": "9e649028-50dd-458d-bf69-413e483e3448",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 610.5,
+            "y": 1977.96875
+          },
+          "nodeIndex": "FACT PRICING MONITOR",
+          "nodeLineageTag": "5ea8d8d7-17b1-435e-bcb9-92b0670c24cf",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 2657,
+            "y": 1204.46875
+          },
+          "nodeIndex": "Parameter Revenuestabelle",
+          "nodeLineageTag": "19033a6c-b8d6-449e-8bbe-8d52da436350",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 19
+        },
+        {
+          "location": {
+            "x": 2638.5,
+            "y": 1461.96875
+          },
+          "nodeIndex": "Parameter Clean Up",
+          "nodeLineageTag": "4b082d37-de6e-458d-8e0d-b7906a707960",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 20
+        },
+        {
+          "location": {
+            "x": 675,
+            "y": 1560.46875
+          },
+          "nodeIndex": "FACT_SALES_OPEN_ORDERS",
+          "nodeLineageTag": "8144ccaf-d4e2-4075-bde7-fca6c8233235",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 2166.5,
+            "y": 927.96875
+          },
+          "nodeIndex": "VMI-FC",
+          "nodeLineageTag": "e1e09482-8922-4d84-8d15-45882a0d668e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 22
+        },
+        {
+          "location": {
+            "x": 3404.5,
+            "y": 1143.21875
+          },
+          "nodeIndex": "Period",
+          "nodeLineageTag": "101c17de-4aa6-41f7-b856-572319865f9f",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3667,
+            "y": 1119.46875
+          },
+          "nodeIndex": "Material Master",
+          "nodeLineageTag": "a91d71fb-ef14-4c46-aced-20ecc74dcdc4",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3929.5,
+            "y": 1083.84375
+          },
+          "nodeIndex": "Invoice Details",
+          "nodeLineageTag": "5cb9b246-0d84-4318-9b8a-620981cc926f",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4192,
+            "y": 1030.40625
+          },
+          "nodeIndex": "Parameter Vergleich",
+          "nodeLineageTag": "52582978-692a-4f9e-8e4b-a86e99c4ca3c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Alle Tabellen",
+      "zoomValue": 40,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Alle Tabellen",
+  "defaultDiagram": "Alle Tabellen"
+}

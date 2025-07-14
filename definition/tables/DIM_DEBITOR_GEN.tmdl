@@ -1,0 +1,251 @@
+table DIM_DEBITOR_GEN
+	lineageTag: d6044837-4106-499c-b085-1726b9c297bc
+
+	column HUB_DEBITOR_HKEY
+		dataType: string
+		lineageTag: b19ff392-667b-4c6c-96a6-f61cfac4a479
+		summarizeBy: none
+		sourceColumn: HUB_DEBITOR_HKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLIENT_CODE
+		dataType: string
+		lineageTag: 21b4c4cc-be47-494e-892c-f84277278f39
+		summarizeBy: none
+		sourceColumn: CLIENT_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEBITOR_NR
+		dataType: string
+		lineageTag: ed680927-2382-4557-8643-5a8a5b655db4
+		summarizeBy: none
+		sourceColumn: DEBITOR_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_DEBITOR_NR
+		dataType: string
+		lineageTag: f84b5856-bd63-497a-b64c-f33e04a208e7
+		summarizeBy: none
+		sourceColumn: CRM_DEBITOR_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEBITOR_GROUP_NR
+		dataType: string
+		lineageTag: 4b8b8f55-7c0c-4a02-9011-4c94c649db00
+		summarizeBy: none
+		sourceColumn: DEBITOR_GROUP_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEBITOR_GROUP_NAME
+		dataType: string
+		lineageTag: c69a92f9-dab5-4ce9-8ab0-aa9e3f0e8d6d
+		summarizeBy: none
+		sourceColumn: DEBITOR_GROUP_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEBITOR_GROUP_ACCOUNT_MANAGER
+		dataType: string
+		lineageTag: bd13b6dd-893b-4305-a7fc-eaf468db9b99
+		summarizeBy: none
+		sourceColumn: DEBITOR_GROUP_ACCOUNT_MANAGER
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEBITOR_NAME
+		dataType: string
+		lineageTag: 992841c6-71b4-453a-8a37-517e92c1d5fb
+		summarizeBy: none
+		sourceColumn: DEBITOR_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_DEBITOR_NAME
+		dataType: string
+		lineageTag: ec8c173b-adf1-490d-800a-ecbb3febd765
+		summarizeBy: none
+		sourceColumn: CRM_DEBITOR_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME_2
+		dataType: string
+		lineageTag: c6dea502-e6e9-49e5-9b98-b5ab0631a73d
+		summarizeBy: none
+		sourceColumn: NAME_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column TITLE
+		dataType: string
+		lineageTag: 650f0da2-ad88-4643-892e-7a1e04f62422
+		summarizeBy: none
+		sourceColumn: TITLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column STREET_NR
+		dataType: string
+		lineageTag: 05e4a636-a490-4476-91f3-31ed1f969db1
+		summarizeBy: none
+		sourceColumn: STREET_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_STREET_NR
+		dataType: string
+		lineageTag: 5d64b13c-b70a-4bd7-8ce4-3932b976a945
+		summarizeBy: none
+		sourceColumn: CRM_STREET_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CITY
+		dataType: string
+		lineageTag: f20f1452-ee9b-44c2-8ef6-87d77b7b0ba3
+		summarizeBy: none
+		sourceColumn: CITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_CITY
+		dataType: string
+		lineageTag: c6ef4164-c149-40e1-a40e-c63088c24e99
+		summarizeBy: none
+		sourceColumn: CRM_CITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZIPCODE
+		dataType: string
+		lineageTag: 2cffc7df-7e2f-4cdc-a9cc-29ae86517ea6
+		summarizeBy: none
+		sourceColumn: ZIPCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_ZIPCODE
+		dataType: string
+		lineageTag: ced16ab7-2371-4479-bb29-828c8ca5d825
+		summarizeBy: none
+		sourceColumn: CRM_ZIPCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_CUSTOMER_COUNTRY
+		dataType: string
+		lineageTag: 16baad72-cf47-45a1-90df-335c8bb5958c
+		summarizeBy: none
+		sourceColumn: CRM_CUSTOMER_COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY_NAME
+		dataType: string
+		lineageTag: cfde0df2-c4fb-4de7-99b5-a8826aeb2430
+		summarizeBy: none
+		sourceColumn: COUNTRY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY_CODE
+		dataType: string
+		lineageTag: 1bb790b3-1317-4c42-8de8-19df309d5a06
+		summarizeBy: none
+		sourceColumn: COUNTRY_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNT_MANAGER
+		dataType: string
+		lineageTag: 28af4836-e3c0-4b58-a443-9d37287be142
+		summarizeBy: none
+		sourceColumn: ACCOUNT_MANAGER
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALES_UNIT
+		dataType: string
+		lineageTag: af1514db-faec-4748-b39b-a25c662fe328
+		summarizeBy: none
+		sourceColumn: SALES_UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column INTERCOMPANYFLAG
+		dataType: string
+		lineageTag: 029237fe-9f4d-430a-85a7-a61b05acced6
+		summarizeBy: none
+		sourceColumn: INTERCOMPANYFLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_CUSTOMER_LIFECYCLE
+		dataType: string
+		lineageTag: c8395dd3-a1d5-4189-ae8a-fbe655d1da98
+		summarizeBy: none
+		sourceColumn: CRM_CUSTOMER_LIFECYCLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_CUSTOMER_SEGMENTATION
+		dataType: string
+		lineageTag: 58d18883-ac5c-4163-8c5d-ce8e1e3aec16
+		summarizeBy: none
+		sourceColumn: CRM_CUSTOMER_SEGMENTATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_CUSTOMER_CAGR_CLASSIFICATION
+		dataType: string
+		lineageTag: bf359e61-eea5-4527-baf0-acffd82a9a49
+		summarizeBy: none
+		sourceColumn: CRM_CUSTOMER_CAGR_CLASSIFICATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column RSRC
+		dataType: string
+		lineageTag: 5f12e805-2692-4227-a6b0-000d8d12a69c
+		summarizeBy: none
+		sourceColumn: RSRC
+
+		annotation SummarizationSetBy = Automatic
+
+	column RSRC_ENTITY
+		dataType: string
+		lineageTag: 3ab0f865-4443-4fbf-afb9-7434c5aefdaa
+		summarizeBy: none
+		sourceColumn: RSRC_ENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debitor Key'
+		dataType: string
+		lineageTag: dbb0812b-381e-48bf-8460-b64bf54f6431
+		summarizeBy: none
+		sourceColumn: Debitor Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_DEBITOR_GEN = m
+		mode: import
+		source =
+				let
+				    Quelle = Snowflake.Databases(SF_SERVER,SF_WAREHOUSE),
+				    SF_DWH_DATAVAULT_Database = Quelle{[Name="SF_DWH_DATAVAULT",Kind="Database"]}[Data],
+				    DWH_MART_SALES_Schema = SF_DWH_DATAVAULT_Database{[Name="DWH_MART_SALES",Kind="Schema"]}[Data],
+				    DIM_DEBITOR_SALES_View = DWH_MART_SALES_Schema{[Name="DIM_DEBITOR_SALES",Kind="View"]}[Data],
+				    #"Hinzugefügte benutzerdefinierte Spalte" = Table.AddColumn(DIM_DEBITOR_SALES_View, "Debitor Key", each [DEBITOR_NR]&"|"&[CLIENT_CODE])
+				in
+				    #"Hinzugefügte benutzerdefinierte Spalte"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

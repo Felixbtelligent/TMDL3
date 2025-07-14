@@ -1,0 +1,49 @@
+table 'Invoices Totals'
+	lineageTag: 24950b47-3996-4528-a87d-d5297da5a37a
+
+	column 'Invoices Totals'
+		lineageTag: cc26e82d-09d6-45bb-97ba-0da2b720a9eb
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Invoices Totals Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Invoices Totals Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoices Totals Felder'
+		isHidden
+		lineageTag: 20b192a4-56b1-412d-b673-1cdc1693da8d
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Invoices Totals Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoices Totals Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: c7e03bbc-50f8-4b8d-9df8-fc0b67c920df
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Invoices Totals' = calculated
+		mode: import
+		source =
+				{
+				    (" ", nameof(FACT_SALES_PERFORMANCE[Blank]), -1),
+				    ("Net Value", NAMEOF('_Measures'[Net Value]), 0),
+				    ("Sales Quantity", NAMEOF('_Measures'[Sales Quantity]), 1)
+				}
+
+	annotation PBI_Id = 26cd73dccc8744ff850c3f75fc3d602c
+

@@ -1,0 +1,91 @@
+createOrReplace
+
+	ref table _Measures
+
+		measure 'Actual Budget comparison %' = ```
+				
+				var up_arrow = "+"
+				var down_arrow = "-"
+				var thisyear = [Net Value]
+				var LY = [Budget revenues]
+				var difpercentage = DIVIDE(thisyear,LY)-1
+				
+				Return
+				IF(
+				    difpercentage < 0, 
+				      FORMAT(difpercentage, "0%") ,
+				    up_arrow & FORMAT(difpercentage, "0%")
+				)
+				```
+			lineageTag: b7c300df-401c-49bb-998d-0ee1da3e6683
+
+		measure 'Actual Budget comparison % YTD' = ```
+				
+				var up_arrow = "+"
+				var down_arrow = "-"
+				var thisyear = [Net Value]
+				var LY = [Budget YTD (bis Heute)]
+				var difpercentage = DIVIDE(thisyear,LY)-1
+				
+				Return
+				IF(
+				    difpercentage < 0, 
+				      FORMAT(difpercentage, "0%") ,
+				    up_arrow & FORMAT(difpercentage, "0%")
+				)
+				```
+			lineageTag: d7258316-7d01-4813-9fcf-0e118e35e7eb
+
+		measure 'Actual PY comparison %' = ```
+				
+				var up_arrow = "+"
+				var down_arrow = "-"
+				var thisyear = [Net Value]
+				var LY = [Net Value Invoices PY]
+				var difpercentage = DIVIDE(thisyear,LY)-1
+				
+				Return
+				IF(
+				    difpercentage < 0, 
+				      FORMAT(difpercentage, "0%") ,
+				    up_arrow & FORMAT(difpercentage, "0%")
+				)
+				```
+			lineageTag: 5bacd3ce-5525-4213-8038-3fbae0de17ab
+
+		measure 'Actuals vs Budget' = ([Net Value]/[Budget revenues])
+			formatString: 0.00\ %;-0.00\ %;0.00\ %
+			lineageTag: 4288374d-44fa-4363-827b-cc8594f713a9
+
+		measure 'Actuals vs Budget YTD' = ([Net Value]/[Budget YTD (bis Heute)])
+			formatString: 0.00\ %;-0.00\ %;0.00\ %
+			lineageTag: c6ad2bde-ac68-4783-b19e-a56e4fbe4fa9
+
+		measure 'All vs Budget' = ([Sum all]/[Budget revenues])-1
+			formatString: 0.00\ %;-0.00\ %;0.00\ %
+			lineageTag: 7e0b207c-b3cf-4979-8d94-05f5535bcc47
+
+		measure 'All vs Budget absolut' = [Sum all]-[Budget revenues]
+			lineageTag: bab8af22-b2e0-4b6f-a5b7-4ebb74dfda62
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		measure 'All vs Budget kumuliert' = ([Sum all kumuliert]/[Kumuliertes Budget])-1
+			formatString: 0.00\ %;-0.00\ %;0.00\ %
+			lineageTag: c7615c42-32db-41d7-9595-9ed6c18b76b2
+
+		measure Blank = BLANK()
+			formatString: 0
+			lineageTag: f300f233-02e6-4132-8aaa-80324b10b292
+
+		measure 'BUD vs ACT in %' = ```
+				DIVIDE(
+				    SUM(FACT_SALES_PERFORMANCE[INVOICE_NET_VALUE_GC]),
+				    SUM(PBI_V_BUDGET[REVENUE_EUR]),
+				    BLANK()
+				)
+				
+				```
+			formatString: 0.00\ %;-0.00\ %;0.00\ %
+			lineageTag: 390cf592-0b82-4370-9b6b-c0fbe5ab825f
+

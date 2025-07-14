@@ -1,0 +1,17 @@
+table 'Debitor Table'
+	lineageTag: e8b832e1-8adf-4934-b852-f8f93f753bca
+
+	column DEBITOR_NR
+		lineageTag: 61816227-fe3c-4829-81e8-3fd8c5ce9ce8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DIM_DEBITOR_GEN[DEBITOR_NR]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Debitor Table' = calculated
+		mode: import
+		source = DISTINCT(DIM_DEBITOR_GEN[DEBITOR_NR])
+
+	annotation PBI_Id = b1e25d5dae644ba18763926f67710e57
+

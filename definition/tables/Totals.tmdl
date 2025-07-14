@@ -1,0 +1,37 @@
+table Totals
+	lineageTag: 435d81ec-a8e4-46aa-837c-a0ba6517e076
+
+	column Value1
+		lineageTag: 93e7b344-4b92-4255-9fd6-4e6e3ecd0371
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value1]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value2
+		lineageTag: ba9ad99e-5121-4a29-a36e-ea15bb656655
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value2]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value3
+		lineageTag: 26b3b14e-c843-4dae-989d-9115228ff074
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Totals = calculated
+		mode: import
+		source =
+				{
+				    ("Net Value", NAMEOF('_Measures'[Net Value]), 0),
+				    ("Sales Quantity", NAMEOF('_Measures'[Sales Quantity]), 1)
+				}
+
+	annotation PBI_Id = 974b29546f174517ad09c2e2e36939e6
+

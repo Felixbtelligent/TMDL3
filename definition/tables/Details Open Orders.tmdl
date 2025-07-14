@@ -1,0 +1,62 @@
+table 'Details Open Orders'
+	lineageTag: 62298ff4-9560-430a-817b-aef9e1dcd442
+
+	column 'Details Open Orders'
+		lineageTag: 6d5daf51-cdba-4154-a676-34f2e57bfa71
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Details Open Orders Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Details Open Orders Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Details Open Orders Felder'
+		isHidden
+		lineageTag: 1b3ce423-33dd-4f80-aecc-8b9e9673d5ab
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Details Open Orders Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Details Open Orders Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: aeab6925-01a3-4ccc-acd4-edba1dec2e94
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Details Open Orders' = calculated
+		mode: import
+		source = ```
+				{
+				    (" ", nameof(FACT_SALES_OPEN_ORDERS[blank]), -1),
+				    ("Legal Entity", NAMEOF('Legal Entity Table'[LE]), 0),
+				    ("Customer Group", NAMEOF('DIM_DEBITOR_GEN'[DEBITOR_GROUP_NAME]), 1),
+				    ("Account Name", NAMEOF('DIM_DEBITOR_GEN'[DEBITOR_NAME]), 2),
+				    ("Account ID", NAMEOF('DIM_DEBITOR_GEN'[DEBITOR_NR]), 3),
+				    ("Customer Country", NAMEOF('DIM_DEBITOR_GEN'[CRM_CUSTOMER_COUNTRY]), 4),
+				    ("Intercompany", NAMEOF('DIM_DEBITOR_GEN'[INTERCOMPANYFLAG]), 5),
+				    ("Account Manager", NAMEOF('DIM_DEBITOR_GEN'[ACCOUNT_MANAGER]), 6),
+				    ("Aenova Sales Unit", NAMEOF('DIM_DEBITOR_GEN'[SALES_UNIT]), 7),
+				    ("Customer Lifecycle", NAMEOF('DIM_DEBITOR_GEN'[CRM_CUSTOMER_LIFECYCLE]), 8),
+				    ("Customer CAGR Classification", NAMEOF('DIM_DEBITOR_GEN'[CRM_CUSTOMER_CAGR_CLASSIFICATION]), 9),
+				    ("Plant", NAMEOF('DIM_PLANT_GEN'[PLANT]), 10),
+				    ("Jahr", NAMEOF('Datumstabelle'[Date].[Jahr]), 11),
+				    ("Material Name", NAMEOF('DIM_PRODUCT_GEN'[PRODUCT_NAME_DE]), 12),
+				    ("Material ID", NAMEOF('DIM_PRODUCT_GEN'[PRODUCT_ID]), 13)   
+				}
+				```
+
+	annotation PBI_Id = d4cb3ad08b434dd1aca7b8319c90f40a
+

@@ -1,0 +1,5 @@
+createOrReplace
+
+	perspective Sales_Perspective {
+    	perspectiveTable FACT_SALES_PERFORMANCE
+			perspectiveColumn ACCOUNT_ID

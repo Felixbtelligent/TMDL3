@@ -1,0 +1,50 @@
+table 'Parameter Revenuestabelle'
+	lineageTag: 19033a6c-b8d6-449e-8bbe-8d52da436350
+
+	column 'Parameter Revenuestabelle'
+		lineageTag: 30ff9177-ba36-4e37-8926-086b3ffc6820
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Revenuestabelle Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Revenuestabelle Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Revenuestabelle Felder'
+		isHidden
+		lineageTag: 63770ddf-4758-4427-be86-71f90d0aafd6
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Revenuestabelle Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Revenuestabelle Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: 464b55f2-d7f9-4300-83ac-81e21f208867
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter Revenuestabelle' = calculated
+		mode: import
+		source =
+				{
+				    ("Jahr", NAMEOF('Datumstabelle'[Date].[Jahr]), 0),
+				    ("Monat", NAMEOF('Datumstabelle'[Date].[Monat]), 1),
+				    ("LE", NAMEOF('Legal Entity Table'[LE]), 2),
+				    ("DEBITOR_GROUP_NAME", NAMEOF('DIM_DEBITOR_GEN'[DEBITOR_GROUP_NAME]), 3)
+				}
+
+	annotation PBI_Id = fff3f602f8164ede87ae873cfacc9b6c
+

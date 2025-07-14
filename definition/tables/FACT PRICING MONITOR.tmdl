@@ -1,0 +1,294 @@
+table 'FACT PRICING MONITOR'
+	lineageTag: 5ea8d8d7-17b1-435e-bcb9-92b0670c24cf
+
+	column HUB_PRODUCT_HKEY
+		dataType: string
+		lineageTag: 91f3910a-122f-4311-a4e0-a5fd4a3d9659
+		summarizeBy: none
+		sourceColumn: HUB_PRODUCT_HKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column HUB_DEBITOR_HKEY
+		dataType: string
+		lineageTag: 5e430398-a8cc-4182-9323-1f481f9b6de5
+		summarizeBy: none
+		sourceColumn: HUB_DEBITOR_HKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column HUB_LOCATION_HKEY
+		dataType: string
+		lineageTag: e394ef5e-9594-41c4-b8b4-6fe8b3c4d761
+		summarizeBy: none
+		sourceColumn: HUB_LOCATION_HKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column HUB_PRICECONDITION_HKEY
+		dataType: string
+		lineageTag: 1ea18768-158e-4a27-a2d3-f4c5108ff5aa
+		summarizeBy: none
+		sourceColumn: HUB_PRICECONDITION_HKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXCHANGE_RATE_PAIR
+		dataType: string
+		lineageTag: 765d16c7-3508-4c0d-aa50-e363aae814f6
+		summarizeBy: none
+		sourceColumn: EXCHANGE_RATE_PAIR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLIENT_CODE
+		dataType: string
+		lineageTag: 854a4754-3aca-4d06-b1be-7b7fc3a73e39
+		summarizeBy: none
+		sourceColumn: CLIENT_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEBITOR_NR
+		dataType: string
+		lineageTag: 601430da-35d6-4360-97ed-cb488e9f7158
+		summarizeBy: none
+		sourceColumn: DEBITOR_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCT_ID
+		dataType: string
+		lineageTag: e8734e16-9e92-45f4-8fe7-1af1d6bba2b4
+		summarizeBy: none
+		sourceColumn: PRODUCT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE_CONDITION_NR
+		dataType: string
+		lineageTag: 73b9430d-4a2b-46af-b34e-19a25f86cbc5
+		summarizeBy: none
+		sourceColumn: PRICE_CONDITION_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENCY_CODE
+		dataType: string
+		lineageTag: aeade39e-fb21-4996-a768-428d6ba2398e
+		summarizeBy: none
+		sourceColumn: CURRENCY_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONDITION_TYPE
+		dataType: string
+		lineageTag: ffad1fef-432a-48df-a3b9-eee9bec690e9
+		summarizeBy: none
+		sourceColumn: CONDITION_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALES_ORGANISATION
+		dataType: string
+		lineageTag: 71848831-a3cb-44a0-a9e4-014bc87cdaa9
+		summarizeBy: none
+		sourceColumn: SALES_ORGANISATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISTRIBUTION_CHANNEL
+		dataType: string
+		lineageTag: 508c4ed9-5967-4a2a-9dbe-c2f2fedbcf76
+		summarizeBy: none
+		sourceColumn: DISTRIBUTION_CHANNEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCALE_BASIS_INDICATOR
+		dataType: string
+		lineageTag: 5b31ec09-6f54-4bf3-b7df-c6f91a414e03
+		summarizeBy: none
+		sourceColumn: SCALE_BASIS_INDICATOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column INFO_RECORD_PRICE
+		dataType: string
+		lineageTag: 69b5f53c-a06c-4157-8362-e9022f419ead
+		summarizeBy: none
+		sourceColumn: INFO_RECORD_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE_GROUP
+		dataType: string
+		lineageTag: e4d46ba3-3dd3-40d1-aa89-04a392eec4b4
+		summarizeBy: none
+		sourceColumn: PRICE_GROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALID_FROM
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2c13a54b-9f1a-4d00-91fe-f0c3160b7c40
+		summarizeBy: none
+		sourceColumn: VALID_FROM
+
+		variation Variation
+			isDefault
+			relationship: 5b483edb-285e-45c4-8550-bc1500456cf6
+			defaultHierarchy: LocalDateTable_a2f7886f-54a4-43de-9d7a-f6ac3f69f4f2.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column VALID_TO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 834bc3aa-beec-442e-9b64-22acd2602fb7
+		summarizeBy: none
+		sourceColumn: VALID_TO
+
+		variation Variation
+			isDefault
+			relationship: 13e9ac34-b024-4028-8a4f-04a15fb6da7c
+			defaultHierarchy: LocalDateTable_3083b539-5bcf-432c-8935-6035a12b970b.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SCALE_PRICE_UNIT_FROM
+		dataType: double
+		lineageTag: 9ff39e48-6966-49eb-8804-306e6c6ee066
+		summarizeBy: sum
+		sourceColumn: SCALE_PRICE_UNIT_FROM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SCALE_PRICE_UNIT_TO
+		dataType: double
+		lineageTag: 475d6d63-54e3-417e-ba8b-189a0313bcf3
+		summarizeBy: sum
+		sourceColumn: SCALE_PRICE_UNIT_TO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SCALE_PRICE
+		dataType: double
+		lineageTag: c1f3f38e-b721-453c-ae12-cc0204439e1c
+		summarizeBy: sum
+		sourceColumn: SCALE_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BASIS_VOLUME
+		dataType: string
+		lineageTag: 6565bd46-5ab0-4554-a01d-4bf7f151cf33
+		summarizeBy: none
+		sourceColumn: BASIS_VOLUME
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIT_PRICE
+		dataType: double
+		lineageTag: 98951ac3-cec7-474d-8ca5-d303bd580872
+		summarizeBy: sum
+		sourceColumn: UNIT_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRICE_VALUE_TYPE
+		dataType: string
+		lineageTag: dbe0deb6-4958-4822-8980-5f312d6654f0
+		summarizeBy: none
+		sourceColumn: PRICE_VALUE_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_CURRENT_BUSINESS
+		dataType: double
+		lineageTag: 8ab803a0-6f30-4ee3-ac18-77ade0de5f2d
+		summarizeBy: sum
+		sourceColumn: IS_CURRENT_BUSINESS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RSRC
+		dataType: string
+		lineageTag: e55bdf6f-abbb-4dcb-9fe1-028857765a6a
+		summarizeBy: none
+		sourceColumn: RSRC
+
+		annotation SummarizationSetBy = Automatic
+
+	column RSRC_ENTITY
+		dataType: string
+		lineageTag: 6fa7d4fd-835d-4c5a-8aa2-fae3d2402d58
+		summarizeBy: none
+		sourceColumn: RSRC_ENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debitor Key'
+		dataType: string
+		lineageTag: 4dea32ad-b9ab-4357-a27b-c24c0f30e459
+		summarizeBy: none
+		sourceColumn: Debitor Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column AS_OF_DATE
+		dataType: string
+		lineageTag: 4abaf7d0-f5c6-4be1-ace2-6bfabaeb5693
+		summarizeBy: none
+		sourceColumn: AS_OF_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FACT_PRICING_MONITOR_KEY
+		dataType: string
+		lineageTag: 596b44e8-cae5-41c8-9698-2adc8156dbb6
+		summarizeBy: none
+		sourceColumn: FACT_PRICING_MONITOR_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scale Price adjusted'
+		dataType: string
+		lineageTag: e7677f3c-1530-4113-94bf-74333fb65a15
+		summarizeBy: none
+		sourceColumn: Scale Price adjusted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'FACT PRICING MONITOR' = m
+		mode: import
+		source =
+				let
+				    Quelle = Snowflake.Databases(SF_SERVER,SF_WAREHOUSE),
+				    SF_DWH_DATAVAULT_Database = Quelle{[Name="SF_DWH_DATAVAULT",Kind="Database"]}[Data],
+				    DWH_MART_SALES_Schema = SF_DWH_DATAVAULT_Database{[Name="DWH_MART_SALES",Kind="Schema"]}[Data],
+				    FACT_PRICING_SALES_View = DWH_MART_SALES_Schema{[Name="FACT_PRICING_SALES",Kind="View"]}[Data],
+				    #"Hinzugefügte benutzerdefinierte Spalte" = Table.AddColumn(FACT_PRICING_SALES_View, "Debitor Key", each [DEBITOR_NR]&"|"&[CLIENT_CODE]),
+				    #"Hinzugefügte benutzerdefinierte Spalte1" = Table.AddColumn(#"Hinzugefügte benutzerdefinierte Spalte", "Scale Price adjusted", each [SCALE_PRICE]/[UNIT_PRICE])
+				in
+				    #"Hinzugefügte benutzerdefinierte Spalte1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,62 @@
+table 'Details Invoices'
+	lineageTag: 952233c7-d21a-46da-a283-2af82681fb7f
+
+	column Details
+		lineageTag: 1d90ac93-d305-4321-9cf2-588c709e3c82
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Details Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Details Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Details Felder'
+		isHidden
+		lineageTag: cfc7425d-89ba-4b66-a3dd-8e08150d4574
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Details Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Details Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: 8cefcc3f-524f-4e8d-806a-476d1cd9ac9e
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Details Invoices' = calculated
+		mode: import
+		source =
+				{
+				    (" ", nameof(FACT_SALES_PERFORMANCE[Blank]), -1),
+				    ("Legal Entity", NAMEOF('DIM_PLANT_GEN'[LE]), 0),
+				    ("Customer Group", NAMEOF('DIM_DEBITOR_GEN'[DEBITOR_GROUP_NAME]), 1),
+				    ("Account Name", NAMEOF('DIM_DEBITOR_GEN'[DEBITOR_NAME]), 2),
+				    ("Account ID", NAMEOF('FACT_SALES_PERFORMANCE'[ACCOUNT_ID]), 3),
+				    ("Customer Country", NAMEOF('DIM_DEBITOR_GEN'[CRM_CUSTOMER_COUNTRY]), 4),
+				    ("Intercompany", NAMEOF('DIM_DEBITOR_GEN'[INTERCOMPANYFLAG]), 5),
+				    ("Account Manager", NAMEOF('DIM_DEBITOR_GEN'[ACCOUNT_MANAGER]), 6),
+				    ("Aenova Sales Unit", NAMEOF('DIM_DEBITOR_GEN'[SALES_UNIT]), 7),
+				    ("Customer Lifecycle", NAMEOF('DIM_DEBITOR_GEN'[CRM_CUSTOMER_LIFECYCLE]), 8),
+				    ("Customer CAGR Classification", NAMEOF('DIM_DEBITOR_GEN'[CRM_CUSTOMER_CAGR_CLASSIFICATION]), 9),
+				    ("Plant", NAMEOF('DIM_PLANT_GEN'[PLANT]), 10),
+				    ("Jahr", NAMEOF('FACT_SALES_PERFORMANCE'[BILLING_DOCUMENT_DATE]), 11),
+				    ("Material Name", NAMEOF(DIM_PRODUCT_GEN[PRODUCT_NAME_DE]), 12),
+				    ("Material ERP No", NAMEOF(DIM_PRODUCT_GEN[PRODUCT_ID]), 13),
+				    ("Material CRM ERP No", NAMEOF(DIM_PRODUCT_GEN[CRM_PRODUCT_ID]), 14)
+				}
+
+	annotation PBI_Id = 42268ca60e0546c39b15e7ac90ef8d21
+

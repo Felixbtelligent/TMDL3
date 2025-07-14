@@ -1,0 +1,47 @@
+table 'Legal Entity Table'
+	lineageTag: 809917e5-85f6-4d0a-9145-da51757fd77d
+
+	column LE
+		lineageTag: 31a0cbf5-7be0-49ba-90f5-c20449d3c93d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DIM_PLANT_GEN[LE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sitecode = ```
+			
+			SWITCH(
+			    'Legal Entity Table'[LE],
+			    "Aenova IP", "AIP",
+			    "C.P.M. GmbH & Co. KG", "FKB",
+			    "Contract Packaging Resources, Inc.", "MIA",
+			    "CRM", "MIA",
+			    "Haupt Pharma Latina S.r.l.", "LAT",
+			    "Haupt Pharma Münster GmbH", "MST",
+			    "Haupt Pharma Wolfratshausen GmbH", "WOR",
+			    "Haupt Pharma Wülfing GmbH", "GRO",
+			    "SWISS CAPS AG", "BAA",
+			    "SWISS CAPS AG", "COR",
+			    "SWISS CAPS AG", "KIR",
+			    "Swiss Caps USA Inc", "GRB",
+			    "SwissCo Services AG", "SIS",
+			    "Temmler Ireland Ltd.", "KIL",
+			    "Temmler Italia S.r.l.", "CAR",
+			    "Temmler Italia S.r.l.", "CAR_2",
+			    "Temmler Pharma GmbH", "MRB",
+			    BLANK()
+			)
+			
+			```
+		lineageTag: fb9e5770-0690-4c3a-a078-618d4c6288cd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Legal Entity Table' = calculated
+		mode: import
+		source = DISTINCT(DIM_PLANT_GEN[LE])
+
+	annotation PBI_Id = b08154c6582d476c9d21bb5474f0ed35
+

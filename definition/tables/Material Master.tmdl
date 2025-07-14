@@ -1,0 +1,73 @@
+table 'Material Master'
+	lineageTag: a91d71fb-ef14-4c46-aced-20ecc74dcdc4
+
+	column 'Material Master'
+		lineageTag: 7c20211d-403f-46a7-9b24-9489343ca511
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Material Master Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Material Master Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Master Felder'
+		isHidden
+		lineageTag: 62beeacb-83d1-4ef5-a93c-c0d1ef80f4c0
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Material Master Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Master Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: 0702af33-5c9a-45a1-baf4-86be68075d58
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Material Master' = calculated
+		mode: import
+		source =
+				{
+				    (" ", NAMEOF([Blank]), -1),
+				    ("BU", NAMEOF('DIM_PRODUCT_GEN'[CRM_BUSINESS_UNIT]), 0),
+				    ("Profic Center", NAMEOF('FACT_SALES_PERFORMANCE'[PROFIT_CENTER]), 1),
+				    ("Bulk Site", NAMEOF('Pruduct_Debitor_Mapping'[BULK_SITE]), 2),
+				    ("Bluk Site Material No.", NAMEOF('Pruduct_Debitor_Mapping'[BULKSITE_MATERIALNO]), 3),
+				    ("Packaging Site", NAMEOF('Pruduct_Debitor_Mapping'[PACKAGING_SITE]), 4),
+				    ("Packaging Site Material No.", NAMEOF('Pruduct_Debitor_Mapping'[PACKAGINGSITE_MATERIALNO]), 5),
+				    ("Service Site", NAMEOF('Pruduct_Debitor_Mapping'[SERVICE_SITE]), 6),
+				    ("Service Site Material No.", NAMEOF('Pruduct_Debitor_Mapping'[SERVICESITE_MATERIALNO]), 7),
+				    ("Sales Type", NAMEOF('DIM_PRODUCT_GEN'[CRM_SALES_TYPE]), 8),
+				    ("Dosage Form", NAMEOF('DIM_PRODUCT_GEN'[CRM_DOSAGE_FORM]), 9),
+				    ("Dosage Form Detail", NAMEOF('DIM_PRODUCT_GEN'[CRM_DOSAGE_FORM_DESCR]), 10),
+				    ("Primary Packaging", NAMEOF('DIM_PRODUCT_GEN'[CRM_PRIMARY_PACKAGING]), 11),
+				    ("Special Substance Class", NAMEOF('DIM_PRODUCT_GEN'[CRM_SPECIAL_SUBSTANCE_CLASS]), 12),
+				    ("Sterile", NAMEOF('DIM_PRODUCT_GEN'[CRM_STERILE]), 13),
+				    ("Material Type", NAMEOF('DIM_PRODUCT_GEN'[PRODUCT_TYPE]), 14),
+				    ("Material Type Detail", NAMEOF('DIM_PRODUCT_GEN'[CRM_AENOVA_PRODUCT_TYPE_DESCR]), 15),
+				    ("Sales Unit", NAMEOF('DIM_DEBITOR_GEN'[SALES_UNIT]), 16),
+				    ("No. of Primary packed pieces in Secondary Package", NAMEOF('DIM_PRODUCT_GEN'[CRM_NO_OF_PRIMARY_PACKED_PIECES_PER_SECONDARY]), 17),
+				    ("Pack Size", NAMEOF('DIM_PRODUCT_GEN'[CRM_PACK_SIZE]), 18),
+				    ("Bulk Unit", NAMEOF('DIM_PRODUCT_GEN'[BULK]), 19),
+				    ("Leading API", NAMEOF('DIM_PRODUCT_GEN'[CRM_LEADING_API]), 20),
+				    ("Dosage Strengh", NAMEOF('DIM_PRODUCT_GEN'[CRM_DOSAGE_STRENGTH]), 21),
+				    ("API Customer Supplied", NAMEOF('DIM_PRODUCT_GEN'[CRM_API_NAME]), 22),
+				    ("Destination Country", NAMEOF('DIM_PRODUCT_GEN'[CRM_DESTINATION_COUNTRY]), 23),
+				    ("BrandName", NAMEOF('DIM_PRODUCT_GEN'[CRM_BRAND_NAME]), 24),
+				    ("Opportunity number project won", NAMEOF('Pruduct_Debitor_Mapping'[OPPORTUNITY_NUMBER_PROJECT_WON]), 25)
+				}
+
+	annotation PBI_Id = b8b81776dada45b58297bf0c144a2bf7
+

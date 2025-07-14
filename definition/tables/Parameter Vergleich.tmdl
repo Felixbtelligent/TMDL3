@@ -1,0 +1,50 @@
+table 'Parameter Vergleich'
+	lineageTag: 52582978-692a-4f9e-8e4b-a86e99c4ca3c
+
+	column 'Parameter Vergleich'
+		lineageTag: dff402ae-a0e8-491b-8d70-e598cd1519f2
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Vergleich Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Vergleich Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Vergleich Felder'
+		isHidden
+		lineageTag: 6f3cfef8-1da4-4f60-a291-6832633501e2
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Vergleich Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Vergleich Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: 72defbbb-853e-4510-99aa-dab45da63a61
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter Vergleich' = calculated
+		mode: import
+		source =
+				{
+				    ("Debitor Group Name", NAMEOF(DIM_DEBITOR_GEN[DEBITOR_GROUP_NAME]), 0),
+				    ("LE", NAMEOF('Legal Entity Table'[LE]), 1),
+				    ("PRODUCT_NAME_DE", NAMEOF('DIM_PRODUCT_GEN'[PRODUCT_NAME_DE]), 2),
+				    ("SUB_KATEGORIE", NAMEOF('DIM_PRODUCT_GEN'[SUB_KATEGORIE]), 3)
+				}
+
+	annotation PBI_Id = cd088b08c0fd4caf9753983fa2a0c35b
+

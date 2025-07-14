@@ -1,0 +1,69 @@
+model Model
+	culture: de-DE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: de-DE
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Tech
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["PBI_V_BUDGET","DIM_PRODUCT_GEN","DIM_DEBITOR_GEN","FACT_SALES_PERFORMANCE","VMI-FC","DIM_PLANT_GEN","FACT_SALES_OPEN_ORDERS","ERP-FC","Pruduct_Debitor_Mapping","FACT PRICING MONITOR","SF_SERVER","SF_WAREHOUSE","SF_DATABASE","SF_SCHEMA","SF_ViewPrefix"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.144.1378.0 (25.06)+cba1e61f16ea36d44901f06fa446299040122394
+
+annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
+
+annotation __TEdtr = 1
+
+ref table PBI_V_BUDGET
+ref table DIM_PRODUCT_GEN
+ref table DateTableTemplate_f911d38c-4e36-4ba9-bfc2-7ed190e70d11
+ref table LocalDateTable_23d71ea1-9664-4e1c-a6cb-e7b1f73a570c
+ref table DIM_DEBITOR_GEN
+ref table FACT_SALES_PERFORMANCE
+ref table LocalDateTable_825a81e6-7906-4e8f-b7f1-62ed6628be31
+ref table LocalDateTable_095dd0e0-4691-4968-9af2-9fed1ba6e47b
+ref table LocalDateTable_5d2c04e7-d93a-48ef-b54f-ca3899ce9ceb
+ref table LocalDateTable_8fc22977-1935-4d6d-96c4-59611a634382
+ref table LocalDateTable_ed696ca5-623a-427d-bb45-baf8d653d6b2
+ref table LocalDateTable_dfd14937-3143-4fba-95eb-ba226bcb244f
+ref table LocalDateTable_ac934392-62ba-4fc2-b446-648590801d2a
+ref table LocalDateTable_9280950a-1c8a-4b7c-b74f-ad1cca32ef8b
+ref table Datumstabelle
+ref table LocalDateTable_9e3d4edb-2002-405d-af22-03dcd11cefc9
+ref table DIM_PLANT_GEN
+ref table _Measures
+ref table Totals
+ref table 'Details Invoices'
+ref table 'Invoices Totals'
+ref table 'Legal Entity Table'
+ref table Reports
+ref table 'Details Open Orders'
+ref table 'Site Code Tabelle'
+ref table 'Debitor Table'
+ref table ERP-FC
+ref table Pruduct_Debitor_Mapping
+ref table LocalDateTable_24971b9d-8f5c-4747-8966-8d0c83bbddfa
+ref table Parameter
+ref table 'Parameter 2'
+ref table 'FACT PRICING MONITOR'
+ref table LocalDateTable_a2f7886f-54a4-43de-9d7a-f6ac3f69f4f2
+ref table LocalDateTable_3083b539-5bcf-432c-8935-6035a12b970b
+ref table 'Parameter Revenuestabelle'
+ref table 'Parameter Clean Up'
+ref table FACT_SALES_OPEN_ORDERS
+ref table LocalDateTable_8ebf0c0b-99be-4cbf-87d6-dcf61d1501c1
+ref table LocalDateTable_5f02c680-ab31-408b-9e23-82520a1b616c
+ref table VMI-FC
+ref table Period
+ref table 'Material Master'
+ref table 'Invoice Details'
+ref table 'Parameter Vergleich'
+
+ref cultureInfo de-DE
+

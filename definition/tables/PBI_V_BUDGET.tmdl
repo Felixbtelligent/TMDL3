@@ -1,0 +1,176 @@
+table PBI_V_BUDGET
+	lineageTag: bb1acce1-bcc3-44b1-b446-1cd61e95862b
+
+	column SITECODE
+		dataType: string
+		lineageTag: f8314583-fc18-4d93-b1ef-a9db401f5a3c
+		summarizeBy: none
+		sourceColumn: SITECODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCT_ID
+		dataType: string
+		lineageTag: 38fccf00-1941-486a-b1de-0650e012d120
+		summarizeBy: none
+		sourceColumn: PRODUCT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEBITOR_NR
+		dataType: string
+		lineageTag: 834bf6bc-8e55-4b33-aabd-d0b0e1fe1118
+		summarizeBy: none
+		sourceColumn: DEBITOR_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTITY_BUDGET
+		dataType: double
+		lineageTag: 64802f47-b16b-4d60-9fe4-328aea4d4eb0
+		summarizeBy: sum
+		sourceColumn: QUANTITY_BUDGET
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REVENUE_EUR
+		dataType: double
+		lineageTag: 662b1118-e174-4f02-ac2b-114c387250fb
+		summarizeBy: sum
+		sourceColumn: REVENUE_EUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRICE_EUR
+		dataType: double
+		lineageTag: 3c1a4380-574c-4c3f-982f-48414d0a6b1b
+		summarizeBy: sum
+		sourceColumn: PRICE_EUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HUB_PRODUCT_HKEY
+		dataType: string
+		lineageTag: 39401de3-9ef0-4a9d-a988-c7b95e171397
+		summarizeBy: none
+		sourceColumn: HUB_PRODUCT_HKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENCY
+		dataType: string
+		lineageTag: 0918cb51-7e0e-4d91-880a-6e5d99a2001a
+		summarizeBy: none
+		sourceColumn: CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALUETYPE
+		dataType: string
+		lineageTag: cb9fa9ac-515b-4fc3-90ad-8f71cc9b97a1
+		summarizeBy: none
+		sourceColumn: VALUETYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR_MONTH
+		dataType: string
+		lineageTag: 84018a66-9b85-4256-88ee-25c96a0f07e3
+		summarizeBy: none
+		sourceColumn: YEAR_MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column Datum
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 88a9160f-ba7a-49dd-af86-b9afa9e5d63a
+		summarizeBy: none
+		sourceColumn: Datum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Client Code'
+		dataType: string
+		lineageTag: c4f8c33d-bf20-41b4-9a63-a625c7965275
+		summarizeBy: none
+		sourceColumn: Client Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debitor Key'
+		dataType: string
+		lineageTag: 01b1d96e-6ef9-4743-8874-c65365661d3c
+		summarizeBy: none
+		sourceColumn: Debitor Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANT
+		dataType: string
+		lineageTag: 5f288709-4c25-4dd8-bc6c-c255fa17313a
+		summarizeBy: none
+		sourceColumn: PLANT
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEGALENTITY
+		dataType: string
+		lineageTag: a7bb00a6-b049-4775-8bf4-fa993c959b6c
+		summarizeBy: none
+		sourceColumn: LEGALENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MATERIALKEY
+		dataType: string
+		lineageTag: ee9aa36c-58ad-47f8-b4b5-8d28e4d3cf70
+		summarizeBy: none
+		sourceColumn: MATERIALKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SITE_1
+		dataType: string
+		lineageTag: 579253cd-dab1-44e9-8cf5-9baf3695cd3e
+		summarizeBy: none
+		sourceColumn: SITE_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column SITE_2
+		dataType: string
+		lineageTag: 00ce50d9-8943-4b97-9cd2-14fec9153b13
+		summarizeBy: none
+		sourceColumn: SITE_2
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PBI_V_BUDGET = m
+		mode: import
+		source =
+				let
+				    Quelle = Snowflake.Databases("zr99360.west-europe.azure.snowflakecomputing.com","DBT_WH_M_TEST"),
+				    SF_DWH_TEST_Database = Quelle{[Name="SF_DWH_TEST",Kind="Database"]}[Data],
+				    DWH_MART_PRICING_Schema = SF_DWH_TEST_Database{[Name="DWH_MART_PRICING",Kind="Schema"]}[Data],
+				    PBI_V_BUDGET_View = DWH_MART_PRICING_Schema{[Name="PBI_V_BUDGET",Kind="View"]}[Data],
+				    #"Hinzugefügte benutzerdefinierte Spalte1" = Table.AddColumn(PBI_V_BUDGET_View, "Datum", each if [YEAR_MONTH] ="202407" then "01.07.2024" else if [YEAR_MONTH] ="202408" then "01.08.2024" else if [YEAR_MONTH] ="202409" then "01.09.2024" else if [YEAR_MONTH] ="202410" then "01.10.2024" else if [YEAR_MONTH] ="202411" then "01.11.2024" else if [YEAR_MONTH] ="202412" then "01.12.2024" else if [YEAR_MONTH] ="202501" then "01.01.2025" else if [YEAR_MONTH] ="202502" then "01.02.2025" else if [YEAR_MONTH] ="202503" then "01.03.2025" else if [YEAR_MONTH] ="202504" then "01.04.2025" else if [YEAR_MONTH] ="202505" then "01.05.2025" else if [YEAR_MONTH] ="202506" then "01.06.2025" else if [YEAR_MONTH] ="202507" then "01.07.2025" else if [YEAR_MONTH] ="202508" then "01.08.2025" else if [YEAR_MONTH] ="202509" then "01.09.2025" else if [YEAR_MONTH] ="202510" then "01.10.2025" else if [YEAR_MONTH] ="202511" then "01.11.2025" else if [YEAR_MONTH] ="202512" then "01.12.2025" else null),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte1",{{"Datum", type date}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte" = Table.AddColumn(#"Geänderter Typ", "Client Code", each if [SITECODE]="SIS" then "SWIP" else if [SITECODE]="GRO" then "BGRO" else if [SITECODE]="FKB" then "BCPM" else if [SITECODE]="AIP" then 100 else if [SITECODE]="CAR" then 100  else if [SITECODE]="LAT" then 100 else if [SITECODE]="MRB" then 100 else if [SITECODE]="MST" then 100 else if [SITECODE]="RBG" then 100 else if [SITECODE]="TIM" then 100 else if [SITECODE]="WOR" then 100 else if [SITECODE]="BAA" then 200 else if [SITECODE]="COR" then 200 else if [SITECODE]="KIL" then 200 else if [SITECODE]="KIR" then 200 else [SITECODE]),
+				    #"Geänderter Typ1" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte",{{"Client Code", type text}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte2" = Table.AddColumn(#"Geänderter Typ1", "Debitor Key", each [DEBITOR_NR]&"|"&[Client Code])
+				in
+				    #"Hinzugefügte benutzerdefinierte Spalte2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

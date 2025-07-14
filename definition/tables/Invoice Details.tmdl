@@ -1,0 +1,53 @@
+table 'Invoice Details'
+	lineageTag: 5cb9b246-0d84-4318-9b8a-620981cc926f
+
+	column 'Invoice Details'
+		lineageTag: c82aa42c-5423-41e9-8e76-544df36b5455
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Invoice Details Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Invoice Details Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Details Felder'
+		isHidden
+		lineageTag: f31fd676-85a1-489d-9a77-b09b82ce5a71
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Invoice Details Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Details Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: 3a6639da-3bf7-43a9-b185-eb857d84f56a
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Invoice Details' = calculated
+		mode: import
+		source =
+				{
+				    (" ", NAMEOF([Blank]), -1),
+				    ("Order No", NAMEOF('FACT_SALES_PERFORMANCE'[SALES_DOCUMENT_NR]), 0),
+				    ("Order-Item No", NAMEOF('FACT_SALES_PERFORMANCE'[SALES_DOCUMENT_LINEITEM_NR]), 1),
+				    ("Invoice No", NAMEOF('FACT_SALES_PERFORMANCE'[BILLING_DOCUMENT_NR]), 2),
+				    ("Invoice Item No", NAMEOF('FACT_SALES_PERFORMANCE'[BILLING_DOCUMENT_LINEITEM_NR]), 3),
+				    ("Invoice Date", NAMEOF('FACT_SALES_PERFORMANCE'[BILLING_DOCUMENT_DATE]), 4),
+				    ("Shipping Point", NAMEOF('FACT_SALES_PERFORMANCE'[SHIPPING_POINT]), 5)
+				}
+
+	annotation PBI_Id = df15c9fd08674b8c98f804a4540df1b5
+

@@ -1,0 +1,149 @@
+table ERP-FC
+	lineageTag: 11e93b9c-648b-472c-999e-37292ceb39f6
+
+	column CLIENT_CODE
+		dataType: string
+		lineageTag: 653c343f-f389-4197-852e-1b8cb738b156
+		summarizeBy: none
+		sourceColumn: CLIENT_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IND_REQ_POINTER
+		dataType: string
+		lineageTag: 141ce05a-4736-4028-88ee-02fc27337250
+		summarizeBy: none
+		sourceColumn: IND_REQ_POINTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERY_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f9fd63bd-7eeb-4e29-a916-449d5ab5b3ea
+		summarizeBy: none
+		sourceColumn: DELIVERY_DATE
+
+		variation Variation
+			isDefault
+			relationship: db656fe6-95b8-46a9-a83b-721d1cf75aae
+			defaultHierarchy: LocalDateTable_24971b9d-8f5c-4747-8966-8d0c83bbddfa.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PLANNED_QUANTITY
+		dataType: double
+		lineageTag: e13cbd06-ba5e-4547-bf16-8bdae14ab4ac
+		summarizeBy: sum
+		sourceColumn: PLANNED_QUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLANNING_PERIOD
+		dataType: string
+		lineageTag: b67d19f4-41db-4511-9550-37fbd2e44432
+		summarizeBy: none
+		sourceColumn: PLANNING_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENTLU
+		dataType: string
+		lineageTag: 363c7781-8962-4f54-b933-1b0e39a900bd
+		summarizeBy: none
+		sourceColumn: ENTLU
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENTLI
+		dataType: string
+		lineageTag: a1b79b29-4ea7-4e0a-af30-ae7eacdef067
+		summarizeBy: none
+		sourceColumn: ENTLI
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEINS
+		dataType: string
+		lineageTag: 78788e8d-e528-4b1d-b63b-767c99100fb1
+		summarizeBy: none
+		sourceColumn: MEINS
+
+		annotation SummarizationSetBy = Automatic
+
+	column MATNR
+		dataType: string
+		lineageTag: 7d83bbeb-39fc-49cb-91c2-64064b3c8852
+		summarizeBy: none
+		sourceColumn: MATNR
+
+		annotation SummarizationSetBy = Automatic
+
+	column WERKS
+		dataType: string
+		lineageTag: 4ae06184-33db-40ba-a6d7-0e5309be0972
+		summarizeBy: none
+		sourceColumn: WERKS
+
+		annotation SummarizationSetBy = Automatic
+
+	column HUB_PRODUCT_HKEY
+		dataType: string
+		lineageTag: e86943fc-9a1e-40e0-a0ba-6b6c43934d01
+		summarizeBy: none
+		sourceColumn: HUB_PRODUCT_HKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BEDAE
+		dataType: string
+		lineageTag: db604321-43f4-440d-b8b7-98ce617f8566
+		summarizeBy: none
+		sourceColumn: BEDAE
+
+		annotation SummarizationSetBy = Automatic
+
+	column VERSB
+		dataType: string
+		lineageTag: 4e67f29e-82b0-437e-8bde-8aafca8d7bff
+		summarizeBy: none
+		sourceColumn: VERSB
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLNKZ
+		dataType: string
+		lineageTag: 9d3bf606-c0be-49cc-bfcd-acf79a3d1ab9
+		summarizeBy: none
+		sourceColumn: PLNKZ
+
+		annotation SummarizationSetBy = Automatic
+
+	column PBDNR
+		dataType: string
+		lineageTag: a1f158fd-a0d2-4046-8ef4-478ba968e671
+		summarizeBy: none
+		sourceColumn: PBDNR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ERP-FC = m
+		mode: import
+		source =
+				let
+				    Quelle = Snowflake.Databases("zr99360.west-europe.azure.snowflakecomputing.com","DBT_WH_M_TEST"),
+				    SF_DWH_TEST_Database = Quelle{[Name="SF_DWH_TEST",Kind="Database"]}[Data],
+				    DWH_EXTERNAL_Schema = SF_DWH_TEST_Database{[Name="DWH_EXTERNAL",Kind="Schema"]}[Data],
+				    ERPFC_Table = DWH_EXTERNAL_Schema{[Name="ERPFC",Kind="Table"]}[Data],
+				    #"Geänderter Typ" = Table.TransformColumnTypes(ERPFC_Table,{{"DELIVERY_DATE", type date}})
+				in
+				    #"Geänderter Typ"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

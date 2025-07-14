@@ -1,0 +1,114 @@
+table Pruduct_Debitor_Mapping
+	lineageTag: 69cd7afb-3b38-4c43-925f-a4bccd5f097f
+
+	column DIM_ACCOUNTPRODUCT_HKEY
+		dataType: string
+		lineageTag: 5a1134cf-bec5-4a34-9d86-dd32250e9c1f
+		summarizeBy: none
+		sourceColumn: DIM_ACCOUNTPRODUCT_HKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_PRODUCT_ID
+		dataType: string
+		lineageTag: 11935e0b-a2aa-4a1e-a84c-9f821fc5288d
+		summarizeBy: none
+		sourceColumn: CRM_PRODUCT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRM_DEBITOR_NR
+		dataType: string
+		lineageTag: ffe38778-2a13-4e68-860a-c46274674a71
+		summarizeBy: none
+		sourceColumn: CRM_DEBITOR_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEGAL_ENTITY
+		dataType: string
+		lineageTag: f7baad88-ccde-4106-8518-8566b5694317
+		summarizeBy: none
+		sourceColumn: LEGAL_ENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVOICING_ENTITY_NAME
+		dataType: string
+		lineageTag: 3974ee35-c735-4700-9771-ee63e548b8ee
+		summarizeBy: none
+		sourceColumn: INVOICING_ENTITY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column BULK_SITE
+		dataType: string
+		lineageTag: 37c4d4f9-9d44-4ade-9536-0110675a16bc
+		summarizeBy: none
+		sourceColumn: BULK_SITE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BULKSITE_MATERIALNO
+		dataType: string
+		lineageTag: 80df9aff-5557-438b-a31c-062273d37498
+		summarizeBy: none
+		sourceColumn: BULKSITE_MATERIALNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PACKAGING_SITE
+		dataType: string
+		lineageTag: 84352462-0870-4299-a2b1-ba6bfa6fab2a
+		summarizeBy: none
+		sourceColumn: PACKAGING_SITE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PACKAGINGSITE_MATERIALNO
+		dataType: string
+		lineageTag: 8483bd73-d90a-4820-8918-13b4438a96a7
+		summarizeBy: none
+		sourceColumn: PACKAGINGSITE_MATERIALNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SERVICE_SITE
+		dataType: string
+		lineageTag: 5e64097c-dbfd-4bfd-9867-04d9d3fe60f8
+		summarizeBy: none
+		sourceColumn: SERVICE_SITE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SERVICESITE_MATERIALNO
+		dataType: string
+		lineageTag: 2226490b-1e26-4289-8395-cd0d1898dca7
+		summarizeBy: none
+		sourceColumn: SERVICESITE_MATERIALNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPPORTUNITY_NUMBER_PROJECT_WON
+		dataType: string
+		lineageTag: 82d60062-f30d-42fe-8fd5-369f2741b4c3
+		summarizeBy: none
+		sourceColumn: OPPORTUNITY_NUMBER_PROJECT_WON
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Pruduct_Debitor_Mapping = m
+		mode: import
+		source =
+				let
+				    Quelle = Snowflake.Databases(SF_SERVER,SF_WAREHOUSE),
+				    SF_DWH_DATAVAULT_Database = Quelle{[Name="SF_DWH_DATAVAULT",Kind="Database"]}[Data],
+				    DWH_MART_SALES_Schema = SF_DWH_DATAVAULT_Database{[Name="DWH_MART_SALES",Kind="Schema"]}[Data],
+				    DIM_ACCOUNTPRODUCT_SALES_View = DWH_MART_SALES_Schema{[Name="DIM_ACCOUNTPRODUCT_SALES",Kind="View"]}[Data]
+				in
+				    DIM_ACCOUNTPRODUCT_SALES_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

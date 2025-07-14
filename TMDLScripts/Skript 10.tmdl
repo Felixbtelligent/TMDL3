@@ -1,0 +1,946 @@
+createOrReplace
+
+	table FACT_SALES_PERFORMANCE
+		lineageTag: 6a6b6106-34ee-4896-b7a9-f6b2726f2ac6
+
+		column HUB_SALES_DOCUMENT_HKEY
+			dataType: string
+			lineageTag: 4abad3af-d7c1-4074-956a-9f6277d78ba8
+			summarizeBy: none
+			sourceColumn: HUB_SALES_DOCUMENT_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column HUB_SALES_DOCUMENT_LINEITEM_HKEY
+			dataType: string
+			lineageTag: 47156f4f-7a44-4b2f-92da-e06e3ee30fe6
+			summarizeBy: none
+			sourceColumn: HUB_SALES_DOCUMENT_LINEITEM_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column HUB_BILLING_DOCUMENT_HKEY
+			dataType: string
+			lineageTag: 0b55592d-e023-4189-a5f9-71a0c5dcdd41
+			summarizeBy: none
+			sourceColumn: HUB_BILLING_DOCUMENT_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column HUB_DELIVERY_DOCUMENT_HKEY
+			dataType: string
+			lineageTag: 9d98611f-c035-41b7-9856-85231318b342
+			summarizeBy: none
+			sourceColumn: HUB_DELIVERY_DOCUMENT_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column HUB_ACCOUNT_HKEY
+			dataType: string
+			lineageTag: 2b1ff9bd-af7b-4af8-801e-bfe815334967
+			summarizeBy: none
+			sourceColumn: HUB_ACCOUNT_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_HUB_ACCOUNT_HKEY
+			dataType: string
+			lineageTag: d141abec-15ee-48df-ae59-dc5288131ab0
+			summarizeBy: none
+			sourceColumn: INVOICE_HUB_ACCOUNT_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_HUB_ACCOUNT_HKEY
+			dataType: string
+			lineageTag: c9df6e37-561a-4497-802c-e3bd3dd5d6f1
+			summarizeBy: none
+			sourceColumn: DELIVERY_HUB_ACCOUNT_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column HUB_LEGALENTITY_HKEY
+			dataType: string
+			lineageTag: 201a0d3c-6a96-4379-a16f-075688917846
+			summarizeBy: none
+			sourceColumn: HUB_LEGALENTITY_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column HUB_PRODUCT_HKEY
+			dataType: string
+			lineageTag: 09d7e930-a394-41ff-bb71-47fd805197d3
+			summarizeBy: none
+			sourceColumn: HUB_PRODUCT_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_HUB_PRODUCT_HKEY
+			dataType: string
+			lineageTag: 2b56d04e-4e71-4d48-b7bb-9323ec6abab1
+			summarizeBy: none
+			sourceColumn: INVOICE_HUB_PRODUCT_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_HUB_PRODUCT_HKEY
+			dataType: string
+			lineageTag: 6c2fc01a-cd26-424f-a76c-225e42329eaa
+			summarizeBy: none
+			sourceColumn: DELIVERY_HUB_PRODUCT_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column HUB_LOCATION_HKEY
+			dataType: string
+			lineageTag: c257a151-d39d-4bbb-92f4-950b244da64b
+			summarizeBy: none
+			sourceColumn: HUB_LOCATION_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_HUB_LOCATION_HKEY
+			dataType: string
+			lineageTag: b2621fc9-40b6-4315-bd20-e9d156b159cd
+			summarizeBy: none
+			sourceColumn: INVOICE_HUB_LOCATION_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_HUB_LOCATION_HKEY
+			dataType: string
+			lineageTag: 4bb249e5-a3fb-4a8e-aa2a-dca80997edc0
+			summarizeBy: none
+			sourceColumn: DELIVERY_HUB_LOCATION_HKEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column CLIENT_CODE
+			dataType: string
+			lineageTag: 374ba6f6-f7a1-4cc4-91b3-818d5e66dadf
+			summarizeBy: none
+			sourceColumn: CLIENT_CODE
+
+			annotation SummarizationSetBy = Automatic
+
+		column SALES_DOCUMENT_NR
+			dataType: string
+			lineageTag: d5b4e872-e1cd-4606-b010-e23645493329
+			summarizeBy: none
+			sourceColumn: SALES_DOCUMENT_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column SALES_DOCUMENT_LINEITEM_NR
+			dataType: string
+			lineageTag: 9598ccd3-b9a6-483e-8b2b-729fb2a93beb
+			summarizeBy: none
+			sourceColumn: SALES_DOCUMENT_LINEITEM_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column BILLING_DOCUMENT_NR
+			dataType: string
+			lineageTag: 0e676cfa-dc75-4215-8bd7-7089eaf681cd
+			summarizeBy: none
+			sourceColumn: BILLING_DOCUMENT_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column BILLING_DOCUMENT_LINEITEM_NR
+			dataType: string
+			lineageTag: 6b21846b-deb1-4068-a78c-d9e803fa6c75
+			summarizeBy: none
+			sourceColumn: BILLING_DOCUMENT_LINEITEM_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_NR
+			dataType: string
+			lineageTag: 0a24719a-7d9a-4e41-a564-e08ee0154da3
+			summarizeBy: none
+			sourceColumn: DELIVERY_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_LINEITEM_NR
+			dataType: string
+			lineageTag: b022d953-91fb-493c-86ab-19441828106f
+			summarizeBy: none
+			sourceColumn: DELIVERY_LINEITEM_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column ACCOUNT_ID
+			dataType: string
+			lineageTag: 03c99dac-6174-4f22-94d4-a95ca16d3e7b
+			summarizeBy: none
+			sourceColumn: ACCOUNT_ID
+
+			annotation SummarizationSetBy = Automatic
+
+		column PRODUCT_ID
+			dataType: string
+			lineageTag: a84218fd-203f-4a6d-b16f-c1ab32a05447
+			summarizeBy: none
+			sourceColumn: PRODUCT_ID
+
+			annotation SummarizationSetBy = Automatic
+
+		column LOCATION_CODE
+			dataType: string
+			lineageTag: a34d5644-47f4-4de6-b5b8-085e8ef5822d
+			summarizeBy: none
+			sourceColumn: LOCATION_CODE
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_PRODUCT_ID
+			dataType: string
+			lineageTag: 65e4d168-cc1a-47e6-ac0a-15f84fe940e9
+			summarizeBy: none
+			sourceColumn: INVOICE_PRODUCT_ID
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_ACCOUNT_ID
+			dataType: string
+			lineageTag: 7f0d7f16-c040-42e1-89f1-4ab725e07b43
+			summarizeBy: none
+			sourceColumn: INVOICE_ACCOUNT_ID
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_LEGAL_ENTITY
+			dataType: string
+			lineageTag: 2ea4c64a-c88f-46b9-a7c6-81d555715353
+			summarizeBy: none
+			sourceColumn: INVOICE_LEGAL_ENTITY
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_SALES_ORGANISATION
+			dataType: string
+			lineageTag: b7aec92f-6cc6-4e15-ac9e-8e8384570e88
+			summarizeBy: none
+			sourceColumn: INVOICE_SALES_ORGANISATION
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_LOCATION_CODE
+			dataType: string
+			lineageTag: 361aeca4-ba6d-4de5-b47a-1578e146fec5
+			summarizeBy: none
+			sourceColumn: INVOICE_LOCATION_CODE
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_PRODUCT_ID
+			dataType: string
+			lineageTag: 68385fa7-67aa-4e88-aed6-284ccf8ae634
+			summarizeBy: none
+			sourceColumn: DELIVERY_PRODUCT_ID
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_ACCOUNT_ID
+			dataType: string
+			lineageTag: c7932132-ca33-4dab-96d0-51f5dc949c08
+			summarizeBy: none
+			sourceColumn: DELIVERY_ACCOUNT_ID
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_LOCATION_CODE
+			dataType: string
+			lineageTag: 6f3dffb2-acaa-4a5a-a0c9-d2a81fa3e734
+			summarizeBy: none
+			sourceColumn: DELIVERY_LOCATION_CODE
+
+			annotation SummarizationSetBy = Automatic
+
+		column SALES_DOCUMENT_TYPE
+			dataType: string
+			lineageTag: 1a7219c0-50b7-4648-b104-94c71db45148
+			summarizeBy: none
+			sourceColumn: SALES_DOCUMENT_TYPE
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_BLOCK_HEAD
+			dataType: string
+			lineageTag: a3a2442a-8f96-458c-a212-87a0e60cef6b
+			summarizeBy: none
+			sourceColumn: DELIVERY_BLOCK_HEAD
+
+			annotation SummarizationSetBy = Automatic
+
+		column DIVISION
+			dataType: string
+			lineageTag: 7b773c2f-8812-4646-b541-e20c0838c6c0
+			summarizeBy: none
+			sourceColumn: DIVISION
+
+			annotation SummarizationSetBy = Automatic
+
+		column REQUESTED_DELIVERY_DATE
+			dataType: dateTime
+			formatString: Long Date
+			lineageTag: 3ff44d93-c66d-47a6-a475-e5995e896885
+			summarizeBy: none
+			sourceColumn: REQUESTED_DELIVERY_DATE
+
+			variation Variation
+				isDefault
+				relationship: 7f4be4ee-2a94-4634-8c69-54655ef50c5e
+				defaultHierarchy: LocalDateTable_825a81e6-7906-4e8f-b7f1-62ed6628be31.Datumshierarchie
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation UnderlyingDateTimeDataType = Date
+
+		column SALES_OFFICE
+			dataType: string
+			lineageTag: 1d80b845-0fd1-4e30-b8b9-c3104913507f
+			summarizeBy: none
+			sourceColumn: SALES_OFFICE
+
+			annotation SummarizationSetBy = Automatic
+
+		column SALES_GROUP
+			dataType: string
+			lineageTag: 8520c6e6-98de-4d4b-8781-8374f99f680e
+			summarizeBy: none
+			sourceColumn: SALES_GROUP
+
+			annotation SummarizationSetBy = Automatic
+
+		column SALES_ORGANISATION
+			dataType: string
+			lineageTag: 1fce78df-3751-4f2a-a6d5-06e755a0934b
+			summarizeBy: none
+			sourceColumn: SALES_ORGANISATION
+
+			annotation SummarizationSetBy = Automatic
+
+		column DISTRIBUTION_CHANNEL
+			dataType: string
+			lineageTag: 2b9ec952-6789-49d5-8c4e-135fbdb7334d
+			summarizeBy: none
+			sourceColumn: DISTRIBUTION_CHANNEL
+
+			annotation SummarizationSetBy = Automatic
+
+		column DOCUMENT_DATE
+			dataType: dateTime
+			formatString: Long Date
+			lineageTag: 02128d0a-f03e-4174-969f-4c06f99544c2
+			summarizeBy: none
+			sourceColumn: DOCUMENT_DATE
+
+			variation Variation
+				isDefault
+				relationship: 5711cdff-052b-41a3-b469-ed360d30c96a
+				defaultHierarchy: LocalDateTable_095dd0e0-4691-4968-9af2-9fed1ba6e47b.Datumshierarchie
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation UnderlyingDateTimeDataType = Date
+
+		column BILLING_DOCUMENT_DATE
+			dataType: dateTime
+			formatString: Long Date
+			lineageTag: aeae9ecb-3f9d-43db-b996-ee8f04c5fe16
+			summarizeBy: none
+			sourceColumn: BILLING_DOCUMENT_DATE
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation UnderlyingDateTimeDataType = Date
+
+		column ACCOUNTING_DOCUMENT_NR
+			dataType: string
+			lineageTag: 0f1c546b-2832-48b1-abe6-8e3b0fd13c9e
+			summarizeBy: none
+			sourceColumn: ACCOUNTING_DOCUMENT_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column CUSTOMER_PRODUCT_ID
+			dataType: string
+			lineageTag: beed7122-52ff-4f4d-ba07-8a34c302e783
+			summarizeBy: none
+			sourceColumn: CUSTOMER_PRODUCT_ID
+
+			annotation SummarizationSetBy = Automatic
+
+		column PRODUCT_HIERARCHY
+			dataType: string
+			lineageTag: 37f85097-786f-4d27-a25f-27863c32216e
+			summarizeBy: none
+			sourceColumn: PRODUCT_HIERARCHY
+
+			annotation SummarizationSetBy = Automatic
+
+		column SALES_DOCUMENT_LINEITEM_CATEGORY
+			dataType: string
+			lineageTag: 8382c3a5-1e0e-42cd-8396-558f659ad701
+			summarizeBy: none
+			sourceColumn: SALES_DOCUMENT_LINEITEM_CATEGORY
+
+			annotation SummarizationSetBy = Automatic
+
+		column SALES_UNIT
+			dataType: string
+			lineageTag: 7258826d-eab1-4450-9ced-5107ead9c98c
+			summarizeBy: none
+			sourceColumn: SALES_UNIT
+
+			annotation SummarizationSetBy = Automatic
+
+		column SHIPPING_POINT
+			dataType: string
+			lineageTag: 777fae6f-a15b-47e7-ac66-bce16330c8de
+			summarizeBy: none
+			sourceColumn: SHIPPING_POINT
+
+			annotation SummarizationSetBy = Automatic
+
+		column PROFIT_CENTER
+			dataType: string
+			lineageTag: c0e8f95b-601a-4a22-93ee-15562a72f1b2
+			summarizeBy: none
+			sourceColumn: PROFIT_CENTER
+
+			annotation SummarizationSetBy = Automatic
+
+		column COST_CENTER
+			dataType: string
+			lineageTag: 190ecce4-445a-492c-991c-eeed2da04b81
+			summarizeBy: none
+			sourceColumn: COST_CENTER
+
+			annotation SummarizationSetBy = Automatic
+
+		column REJECTION_REASON
+			dataType: string
+			lineageTag: d2e59988-95c8-4775-9ca4-a187534e6c9b
+			summarizeBy: none
+			sourceColumn: REJECTION_REASON
+
+			annotation SummarizationSetBy = Automatic
+
+		column BILLING_BLOCK_ITEM
+			dataType: string
+			lineageTag: 3cb216e3-5e75-4757-8900-dca4eb71dd82
+			summarizeBy: none
+			sourceColumn: BILLING_BLOCK_ITEM
+
+			annotation SummarizationSetBy = Automatic
+
+		column CURRENCY_CODE
+			dataType: string
+			lineageTag: 01a2ae25-6524-442f-a1cf-b151c76b6bcc
+			summarizeBy: none
+			sourceColumn: CURRENCY_CODE
+
+			annotation SummarizationSetBy = Automatic
+
+		column IMPACT
+			dataType: double
+			lineageTag: 886c536f-d487-4e2a-8950-9a7f3379195e
+			summarizeBy: sum
+			sourceColumn: IMPACT
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column NET_VALUE_GC
+			dataType: double
+			lineageTag: 41f67f28-e44e-4f7d-8b57-66fe56c7b339
+			summarizeBy: sum
+			sourceColumn: NET_VALUE_GC
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column NET_VALUE_LC
+			dataType: double
+			lineageTag: 4da6f942-2222-47c0-b4ce-ff7c0335fcce
+			summarizeBy: sum
+			sourceColumn: NET_VALUE_LC
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column PRICING_UNIT
+			dataType: string
+			lineageTag: f6117e27-897b-4550-b498-f22ca8eae34b
+			summarizeBy: none
+			sourceColumn: PRICING_UNIT
+
+			annotation SummarizationSetBy = Automatic
+
+		column BASE_UNIT_MEASURE
+			dataType: string
+			lineageTag: 93237bf7-048e-4f88-babe-6a8e3c8a273e
+			summarizeBy: none
+			sourceColumn: BASE_UNIT_MEASURE
+
+			annotation SummarizationSetBy = Automatic
+
+		column QUANTITY
+			dataType: double
+			lineageTag: fa8a066d-834a-4829-b860-25a5890681d5
+			summarizeBy: sum
+			sourceColumn: QUANTITY
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column PRICPERUNIT_GC
+			dataType: double
+			lineageTag: f1f7564a-052d-4d51-a7f1-da7820b2cfe1
+			summarizeBy: sum
+			sourceColumn: PRICPERUNIT_GC
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column PRICPERUNIT_LC
+			dataType: double
+			lineageTag: 9278169a-a732-4517-9b62-61b13a0ae2a9
+			summarizeBy: sum
+			sourceColumn: PRICPERUNIT_LC
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column SALES_UNIT_TARGET_QUANTITY
+			dataType: string
+			lineageTag: 360eaa77-b04c-4522-a3aa-a456423549c8
+			summarizeBy: none
+			sourceColumn: SALES_UNIT_TARGET_QUANTITY
+
+			annotation SummarizationSetBy = Automatic
+
+		column CONFIRMED_QUANTITY_SUM
+			dataType: string
+			lineageTag: 6f6c6233-b154-4d01-9f56-aa9aa9c0f466
+			summarizeBy: none
+			sourceColumn: CONFIRMED_QUANTITY_SUM
+
+			annotation SummarizationSetBy = Automatic
+
+		column CONVERT_FACTOR
+			dataType: double
+			lineageTag: a5d6ddf7-37c9-496c-97bd-ea0d374a3e54
+			summarizeBy: sum
+			sourceColumn: CONVERT_FACTOR
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column FISCAL_YEAR
+			dataType: double
+			lineageTag: 9be646f6-d3b1-4a1e-aecb-582fbadd9389
+			summarizeBy: sum
+			sourceColumn: FISCAL_YEAR
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column BILLING_DOCUMENT_CATEGORY
+			dataType: string
+			lineageTag: 0ef12e42-7d74-4959-bb85-594a784538b2
+			summarizeBy: none
+			sourceColumn: BILLING_DOCUMENT_CATEGORY
+
+			annotation SummarizationSetBy = Automatic
+
+		column BILLING_DOCUMENT_CANCELLED_FLAG
+			dataType: string
+			lineageTag: dfee095f-3d24-4cbf-93b4-6237b2fe94e3
+			summarizeBy: none
+			sourceColumn: BILLING_DOCUMENT_CANCELLED_FLAG
+
+			annotation SummarizationSetBy = Automatic
+
+		column INCOTERMS_1
+			dataType: string
+			lineageTag: 0af605b2-2991-41e4-9bb1-4e249e659867
+			summarizeBy: none
+			sourceColumn: INCOTERMS_1
+
+			annotation SummarizationSetBy = Automatic
+
+		column INCOTERMS_2
+			dataType: string
+			lineageTag: 468cc39b-e34f-4c93-a3b3-d6537a7904cc
+			summarizeBy: none
+			sourceColumn: INCOTERMS_2
+
+			annotation SummarizationSetBy = Automatic
+
+		column PAYMENT_TERMS_KEY
+			dataType: string
+			lineageTag: 7977ca9c-e272-485e-8c17-7c4e9d3e58b7
+			summarizeBy: none
+			sourceColumn: PAYMENT_TERMS_KEY
+
+			annotation SummarizationSetBy = Automatic
+
+		column CREATED_ON
+			dataType: dateTime
+			formatString: Long Date
+			lineageTag: c842abfe-79e1-40bf-b3d0-333d5beac70b
+			summarizeBy: none
+			sourceColumn: CREATED_ON
+
+			variation Variation
+				isDefault
+				relationship: 8e5f4a80-bea0-4ae1-858f-8b203f2c2610
+				defaultHierarchy: LocalDateTable_5d2c04e7-d93a-48ef-b54f-ca3899ce9ceb.Datumshierarchie
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation UnderlyingDateTimeDataType = Date
+
+		column UPDATED_ON
+			dataType: dateTime
+			formatString: Long Date
+			lineageTag: 67bacbe9-6076-4c1f-899e-e37a85c8f28c
+			summarizeBy: none
+			sourceColumn: UPDATED_ON
+
+			variation Variation
+				isDefault
+				relationship: 0b7cb8a9-892f-474f-ac5f-c9f192c2cb90
+				defaultHierarchy: LocalDateTable_8fc22977-1935-4d6d-96c4-59611a634382.Datumshierarchie
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation UnderlyingDateTimeDataType = Date
+
+		column REF_DOCUMENT_NR
+			dataType: string
+			lineageTag: 97f242cb-9450-40f0-967e-ae4258fe894d
+			summarizeBy: none
+			sourceColumn: REF_DOCUMENT_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column CANCELLED_BILLING_DOCUMENT_NR
+			dataType: string
+			lineageTag: ec019ac1-9489-4cc7-b70b-2d53ac9f861b
+			summarizeBy: none
+			sourceColumn: CANCELLED_BILLING_DOCUMENT_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column CUSTOMER_PURCHASE_ORDER_NR
+			dataType: string
+			lineageTag: d8355751-a2b2-4554-bbba-31c7c5c108e7
+			summarizeBy: none
+			sourceColumn: CUSTOMER_PURCHASE_ORDER_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column BILLING_DOCUMENT_TYPE
+			dataType: string
+			lineageTag: e00b5802-bc4f-421e-8e75-516fd528e8fe
+			summarizeBy: none
+			sourceColumn: BILLING_DOCUMENT_TYPE
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_CURRENCY_CODE
+			dataType: string
+			lineageTag: 556f81e8-3ecc-41b8-9878-0d6b6f6d0cf3
+			summarizeBy: none
+			sourceColumn: INVOICE_CURRENCY_CODE
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_IMPACT
+			dataType: double
+			lineageTag: b9aefe87-6185-4d7e-b2cf-b1a2d3fe7cba
+			summarizeBy: sum
+			sourceColumn: INVOICE_IMPACT
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column INVOICE_NET_VALUE_GC
+			dataType: double
+			lineageTag: 49eaf8a4-a7f7-46d0-bd46-2566fbba5a1a
+			summarizeBy: sum
+			sourceColumn: INVOICE_NET_VALUE_GC
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column INVOICE_NET_VALUE_LC
+			dataType: double
+			lineageTag: 6075bc92-f590-4644-9ba8-ab14545ca83c
+			summarizeBy: sum
+			sourceColumn: INVOICE_NET_VALUE_LC
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column INVOICE_QUANTITY
+			dataType: double
+			lineageTag: ab9a0557-7b1e-4bc4-8c6b-0d766033556f
+			summarizeBy: sum
+			sourceColumn: INVOICE_QUANTITY
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column BUSINESS_AREA
+			dataType: string
+			lineageTag: 372c4bdb-de70-46bc-b4a6-ebbc19410f41
+			summarizeBy: none
+			sourceColumn: BUSINESS_AREA
+
+			annotation SummarizationSetBy = Automatic
+
+		column INVOICE_BASE_UNIT_MEASURE
+			dataType: string
+			lineageTag: b93b9ec2-1479-4cfa-915f-1cdd28c4c2a5
+			summarizeBy: none
+			sourceColumn: INVOICE_BASE_UNIT_MEASURE
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_DOCUMENT_DATE
+			dataType: dateTime
+			formatString: Long Date
+			lineageTag: a8adde76-064e-4dbe-b129-4e644b7ed171
+			summarizeBy: none
+			sourceColumn: DELIVERY_DOCUMENT_DATE
+
+			variation Variation
+				isDefault
+				relationship: c2bd6aa5-3025-4af8-a71c-cd723d23e195
+				defaultHierarchy: LocalDateTable_ed696ca5-623a-427d-bb45-baf8d653d6b2.Datumshierarchie
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation UnderlyingDateTimeDataType = Date
+
+		column SOLDTO_DEBITOR_NR
+			dataType: string
+			lineageTag: 1c69d896-15f8-422b-b28a-c71fff9dac00
+			summarizeBy: none
+			sourceColumn: SOLDTO_DEBITOR_NR
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_TYPE_ID
+			dataType: string
+			lineageTag: b989c457-5e09-4333-9256-ef77effbd5f8
+			summarizeBy: none
+			sourceColumn: DELIVERY_TYPE_ID
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_TYPE
+			dataType: string
+			lineageTag: 538ca7d5-ce21-45a0-9fa0-37b6e26ec705
+			summarizeBy: none
+			sourceColumn: DELIVERY_TYPE
+
+			annotation SummarizationSetBy = Automatic
+
+		column CONFIRMED_DELIVERY_DATE
+			dataType: dateTime
+			formatString: Long Date
+			lineageTag: afa52dce-bf01-442a-b16e-253a26209eed
+			summarizeBy: none
+			sourceColumn: CONFIRMED_DELIVERY_DATE
+
+			variation Variation
+				isDefault
+				relationship: a33a1ea6-66dc-4cce-bcbd-41291aba51af
+				defaultHierarchy: LocalDateTable_dfd14937-3143-4fba-95eb-ba226bcb244f.Datumshierarchie
+
+			annotation SummarizationSetBy = Automatic
+
+		column PLANNED_GOODS_ISSUE_DATE
+			dataType: dateTime
+			formatString: Long Date
+			lineageTag: a4b60b54-b29a-4403-a9e1-f80ab9849728
+			summarizeBy: none
+			sourceColumn: PLANNED_GOODS_ISSUE_DATE
+
+			variation Variation
+				isDefault
+				relationship: 01c58ae9-0ac4-4aca-8572-5363ef0b9ce9
+				defaultHierarchy: LocalDateTable_ac934392-62ba-4fc2-b446-648590801d2a.Datumshierarchie
+
+			annotation SummarizationSetBy = Automatic
+
+		column ACTUAL_GOODS_ISSUE_DATE
+			dataType: dateTime
+			formatString: Long Date
+			lineageTag: 557a4880-c20b-4f00-8725-bb356e0a4031
+			summarizeBy: none
+			sourceColumn: ACTUAL_GOODS_ISSUE_DATE
+
+			variation Variation
+				isDefault
+				relationship: 7f8ac949-efef-415c-ab21-4e06ccf8d0bd
+				defaultHierarchy: LocalDateTable_9280950a-1c8a-4b7c-b74f-ad1cca32ef8b.Datumshierarchie
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_INCOTERMS_1
+			dataType: string
+			lineageTag: 36a8768f-ac03-4fa9-8489-4eab7692bf7f
+			summarizeBy: none
+			sourceColumn: DELIVERY_INCOTERMS_1
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_INCOTERMS_2
+			dataType: string
+			lineageTag: 48d12747-cc18-4d61-8330-8e75801c5eea
+			summarizeBy: none
+			sourceColumn: DELIVERY_INCOTERMS_2
+
+			annotation SummarizationSetBy = Automatic
+
+		column ISCOMPLETEDELIVERY
+			dataType: string
+			lineageTag: a3f50f6a-7d89-4fae-9180-546a478c6993
+			summarizeBy: none
+			sourceColumn: ISCOMPLETEDELIVERY
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_IMPACT
+			dataType: double
+			lineageTag: 46799f5b-42fc-4f6b-a7a7-edc6656b8327
+			summarizeBy: sum
+			sourceColumn: DELIVERY_IMPACT
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column DELIVERY_NET_VALUE_GC
+			dataType: double
+			lineageTag: 08588b86-0acd-4fb2-91ad-00374c7efab0
+			summarizeBy: sum
+			sourceColumn: DELIVERY_NET_VALUE_GC
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column DELIVERY_NET_VALUE_LC
+			dataType: double
+			lineageTag: efa2d937-cce7-4dd8-a23f-b2e54f9e3b1a
+			summarizeBy: sum
+			sourceColumn: DELIVERY_NET_VALUE_LC
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column DELIVERY_QUANTITY
+			dataType: int64
+			formatString: 0
+			lineageTag: d9d8e080-dfbb-4058-aeca-6181da727425
+			summarizeBy: sum
+			sourceColumn: DELIVERY_QUANTITY
+
+			changedProperty = DataType
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_ITEM_TYPE
+			dataType: string
+			lineageTag: ac34689b-fc43-47ba-886b-6b838fe6a297
+			summarizeBy: none
+			sourceColumn: DELIVERY_ITEM_TYPE
+
+			annotation SummarizationSetBy = Automatic
+
+		column DELIVERY_ITEM_CATEGORY
+			dataType: string
+			lineageTag: 4162c906-d444-4e81-8805-e3915aa501ca
+			summarizeBy: none
+			sourceColumn: DELIVERY_ITEM_CATEGORY
+
+			annotation SummarizationSetBy = Automatic
+
+		column CUMULATIVE_DELIVERY_QUANTITY
+			dataType: double
+			lineageTag: 8751f77f-eadf-435a-a1cc-a68484588034
+			summarizeBy: sum
+			sourceColumn: CUMULATIVE_DELIVERY_QUANTITY
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		column LegalEntity_Above_Threshold
+			type: calculated
+			lineageTag: 31c914be-faa1-45f9-85a8-51cf4125284f
+			summarizeBy: sum
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":"\nIF([NetValue_Total_LegalEntity] > 1500000, \"Ja\", \"Nein\")\n"}
+
+			annotation 277cc1b9-af89-4597-8e15-cacc25c0886b = ```
+					Eine Ringabhängigkeit wurde festgestellt: FACT_SALES_PERFORMANCE[NetValue_Total_LegalEntity], FACT_SALES_PERFORMANCE[Spalte], FACT_SALES_PERFORMANCE[NetValue_Total_LegalEntity].
+					
+					```
+
+		column SITECODE
+			dataType: string
+			lineageTag: 342af23e-5dd1-4dde-82e3-0aec7a7fe998
+			summarizeBy: none
+			sourceColumn: SITECODE
+
+			annotation SummarizationSetBy = Automatic
+
+		column Blank = blank()
+			formatString: 0
+			lineageTag: 464d2733-30e0-4082-9de9-6b25c90216dc
+			summarizeBy: sum
+
+			annotation SummarizationSetBy = Automatic
+
+		partition FACT_SALES_PERFORMANCE = m
+			mode: import
+			source =
+					let
+					    Quelle = Snowflake.Databases(SF_SERVER,SF_WAREHOUSE),
+					    SF_DWH_DATAVAULT_Database = Quelle{[Name="SF_DWH_DATAVAULT",Kind="Database"]}[Data],
+					    DWH_MART_SALES_Schema = SF_DWH_DATAVAULT_Database{[Name="DWH_MART_SALES",Kind="Schema"]}[Data],
+					    FACT_SALES_PERFORMANCE_View = DWH_MART_SALES_Schema{[Name="FACT_SALES_PERFORMANCE",Kind="View"]}[Data],
+					    #"Hinzugefügte benutzerdefinierte Spalte" = Table.AddColumn(FACT_SALES_PERFORMANCE_View, "SITECODE", each if [LOCATION_CODE] = "0050" then "TIM" else if [LOCATION_CODE] = "0091" then "AIP" else if [LOCATION_CODE] = "1000" then "WOR" else if [LOCATION_CODE] = "2100" then "KIR" else if [LOCATION_CODE] = "2200" then "BAA" else if [LOCATION_CODE] = "2400" then "COR" else if [LOCATION_CODE] = "3000" then "MST" else if [LOCATION_CODE] = "4100" then "GRO" else if [LOCATION_CODE] = "4400" then "RGB" else if [LOCATION_CODE] = "4499" then "RGB" else if [LOCATION_CODE] = "5200" then "MIA" else if [LOCATION_CODE] = "5250" then "GRB" else if [LOCATION_CODE] = "6200" then "LAT" else if [LOCATION_CODE] = "6500" then "KIL" else if [LOCATION_CODE] = "6650" then "CAR" else if [LOCATION_CODE] = "6700" then "FKB" else if [LOCATION_CODE] = "6900" then "SIS" else if [LOCATION_CODE] = "7010" then "MRB" else if [LOCATION_CODE] = "IT01" then "CAR" else [LOCATION_CODE])
+					in
+					    #"Hinzugefügte benutzerdefinierte Spalte"
+
+		annotation PBI_NavigationStepName = Navigation
+
+		annotation PBI_ResultType = Table
+

@@ -1,0 +1,17 @@
+table 'Site Code Tabelle'
+	lineageTag: 445ce36c-702c-41fc-ada7-7ba7ee6e7547
+
+	column SITECODE
+		lineageTag: cad3d8a7-9326-4f0c-8301-8f37ecf4cc76
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DIM_PLANT_GEN[SITECODE]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Site Code Tabelle' = calculated
+		mode: import
+		source = DISTINCT(DIM_PLANT_GEN[SITECODE])
+
+	annotation PBI_Id = ede08aac3ec44233946cea7ff33b5dc6
+
